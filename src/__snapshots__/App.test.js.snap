@@ -2,8 +2,28 @@
 
 exports[`snapshot test 1`] = `
 <div
-  className="tc b"
+  className="flex flex-column w-80 mw8 vh-100 center pv4"
 >
-  Emoji Chatbot
+  <div
+    className="flex flex-auto flex-column"
+  >
+    <div
+      className="b tc"
+    >
+      Emoji Chatbot
+    </div>
+  </div>
+  <div
+    className="self-center"
+  >
+    <a
+      href="https://github.com/joelgeorgev/emoji-chatbot"
+    >
+      <img
+        alt="GitHub"
+        src="github.svg"
+      />
+    </a>
+  </div>
 </div>
 `;
