@@ -5,12 +5,22 @@ exports[`snapshot test 1`] = `
   className="flex flex-column w-80 mw8 vh-100 center pv4"
 >
   <div
-    className="flex flex-auto flex-column"
+    className="flex flex-auto flex-column self-center"
   >
     <div
-      className="b tc"
+      className="flex flex-column pa2 w5"
     >
-      Emoji Chatbot
+      <div
+        className="flex flex-column ma2 ba br2 pa2 h24"
+      />
+      <div
+        className="self-center ma2"
+      >
+        <input
+          className="ba b--light-silver"
+          type="text"
+        />
+      </div>
     </div>
   </div>
   <div
