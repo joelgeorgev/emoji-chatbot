@@ -11,14 +11,21 @@ exports[`snapshot test 1`] = `
       className="flex flex-column pa2 w5"
     >
       <div
-        className="flex flex-column ma2 ba br2 pa2 h24"
-      />
+        className="ba br2 pa2 overflow-auto"
+      >
+        <div
+          className="flex flex-column ma2 h24"
+        />
+      </div>
       <div
         className="self-center ma2"
       >
         <input
           className="ba b--light-silver"
+          onChange={[Function]}
+          onKeyPress={[Function]}
           type="text"
+          value=""
         />
       </div>
     </div>
