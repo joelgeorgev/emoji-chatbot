@@ -2,7 +2,7 @@
 
 exports[`snapshot test 1`] = `
 <div
-  className="b tc"
+  className="tc b"
 >
   Emoji Chatbot
 </div>

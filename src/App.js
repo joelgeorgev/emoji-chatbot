@@ -4,7 +4,7 @@ import 'tachyons/css/tachyons.min.css';
 export class App extends React.PureComponent {
   render() {
     return (
-      <div className='b tc'>
+      <div className='tc b'>
         Emoji Chatbot
       </div>
     );
