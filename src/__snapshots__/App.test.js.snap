@@ -18,12 +18,13 @@ exports[`snapshot test 1`] = `
         />
       </div>
       <div
-        className="self-center ma2"
+        className="self-center ma4"
       >
         <input
-          className="ba b--light-silver"
+          className="ba b--light-silver pa2"
           onChange={[Function]}
           onKeyPress={[Function]}
+          placeholder="Write a message"
           type="text"
           value=""
         />
