@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import { MessageStream, ComposeMessage } from '.';
+import { MessageStream, ComposeMessage } from '.'
 
 export class ChatWindow extends React.PureComponent {
   render() {
@@ -9,6 +9,6 @@ export class ChatWindow extends React.PureComponent {
         <MessageStream messages={this.props.messages} />
         <ComposeMessage onSendMessage={this.props.onSendMessage} />
       </div>
-    );
+    )
   }
 }

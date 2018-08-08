@@ -1,1 +1,1 @@
-export * from './chat-window-container';
+export * from './chat-window-container'

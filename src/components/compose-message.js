@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 
 export class ComposeMessage extends React.PureComponent {
 
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       message: ''
     }
@@ -11,13 +11,13 @@ export class ComposeMessage extends React.PureComponent {
 
   handleKeyPress = (e) => {
     if (e.key === 'Enter') {
-      this.props.onSendMessage(this.state.message);
-      this.setState({ message: '' });
+      this.props.onSendMessage(this.state.message)
+      this.setState({ message: '' })
     }
   }
 
   handleChange = (e) => {
-    this.setState({ message: e.target.value });
+    this.setState({ message: e.target.value })
   }
 
   render() {
@@ -30,6 +30,6 @@ export class ComposeMessage extends React.PureComponent {
           onChange={this.handleChange}
           onKeyPress={this.handleKeyPress} />
       </div>
-    );
+    )
   }
 }

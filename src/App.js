@@ -1,13 +1,13 @@
-import React from 'react';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import 'tachyons/css/tachyons.min.css';
+import React from 'react'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import 'tachyons/css/tachyons.min.css'
 
-import { ChatWindowContainer } from './containers';
-import { rootReducer } from './reducers';
-import github from './assets/github.svg';
+import { ChatWindowContainer } from './containers'
+import { rootReducer } from './reducers'
+import github from './assets/github.svg'
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer)
 
 export class App extends React.PureComponent {
   render() {
@@ -24,6 +24,6 @@ export class App extends React.PureComponent {
           </a>
         </div>
       </div>
-    );
+    )
   }
 }

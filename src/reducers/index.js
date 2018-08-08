@@ -1,5 +1,5 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from 'redux'
 
-import { messages } from './messages';
+import { messages } from './messages'
 
-export const rootReducer = combineReducers({ messages });
+export const rootReducer = combineReducers({ messages })
