@@ -11,8 +11,11 @@ export class ComposeMessage extends React.PureComponent {
 
   handleKeyPress = (e) => {
     if (e.key === 'Enter') {
-      this.props.onSendMessage(this.state.message)
-      this.setState({ message: '' })
+      const message = this.state.message.trim()
+      if (message) {
+        this.props.onSendMessage(message)
+        this.setState({ message: '' })
+      }
     }
   }
 
