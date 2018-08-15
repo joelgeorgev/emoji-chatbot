@@ -1,7 +1,7 @@
 {
   "name": "emoji-chatbot",
   "version": "1.0.0",
-  "description": "",
+  "description": "A chatbot that translates words to emojis.",
   "dependencies": {
     "moji-translate": "^1.0.8",
     "react": "^16.4.2",
@@ -25,6 +25,16 @@
     "tachyons": "^4.11.1"
   },
   "repository": "https://github.com/joelgeorgev/emoji-chatbot",
+  "keywords": [
+    "React",
+    "reactjs",
+    "redux",
+    "react-redux",
+    "redux-saga",
+    "emoji",
+    "chatbot",
+    "translate"
+  ],
   "author": "Joel George V",
   "homepage": "https://joelgeorgev.github.io/emoji-chatbot",
   "license": "MIT"

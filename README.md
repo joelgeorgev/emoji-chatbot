@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/joelgeorgev/emoji-chatbot.svg?branch=master)](https://travis-ci.org/joelgeorgev/emoji-chatbot)
 
+> A chatbot that translates words to emojis. Uses [moji-translate](https://www.npmjs.com/package/moji-translate) for translation.
+
 Check out the app [here](https://joelgeorgev.github.io/emoji-chatbot).
 
 ## To run the app
