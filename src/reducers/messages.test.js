@@ -2,7 +2,8 @@ import { messages } from './messages'
 
 describe('reducers test', () => {
   it('should handle initial state', () => {
-    expect(messages(undefined, {})).toEqual([])
+    expect(messages(undefined, {}))
+      .toEqual([{ author: 'Bot', message: 'Write a message and see it translated to emojis!' }])
   })
 
   it('should handle SAVE_MESSAGE', () => {

@@ -15,7 +15,17 @@ exports[`snapshot test 1`] = `
       >
         <div
           className="flex flex-column ma2 min-h24"
-        />
+        >
+          <div
+            className="flex justify-start"
+          >
+            <div
+              className="br2 ma1 pa2 bg-light-gray"
+            >
+              Write a message and see it translated to emojis!
+            </div>
+          </div>
+        </div>
       </div>
       <div
         className="self-center ma4"
