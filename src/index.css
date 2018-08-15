@@ -4,6 +4,6 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-.h24 {
-  height: 24rem;
+.min-h24 {
+  min-height: 24rem;
 }
