@@ -1,8 +1,8 @@
 export const messages = (state = [], action) => {
   switch (action.type) {
-    case 'SEND_MESSAGE':
-      const message = action.message
-      return [...state, { author: 'You', message }, { author: 'Bot', message }]
+    case 'SAVE_MESSAGE':
+      const { author, message } = action.payload
+      return [...state, { author, message }]
     default:
       return state
   }

@@ -1,13 +1,17 @@
 import React from 'react'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
+import createSagaMiddleware from 'redux-saga'
 import 'tachyons/css/tachyons.min.css'
 
 import { ChatWindowContainer } from './containers'
 import { rootReducer } from './reducers'
+import saga from './sagas'
 import github from './assets/github.svg'
 
-const store = createStore(rootReducer)
+const sagaMiddleware = createSagaMiddleware()
+const store = createStore(rootReducer, applyMiddleware(sagaMiddleware))
+sagaMiddleware.run(saga)
 
 export class App extends React.PureComponent {
   render() {
