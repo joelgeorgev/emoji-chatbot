@@ -1,5 +1,5 @@
 import { takeEvery, put } from 'redux-saga/effects'
-import translate from 'moji-translate'
+import translate from './moji-translate'
 
 function* processMessage(actionObj) {
   yield put({
