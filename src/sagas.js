@@ -1,4 +1,5 @@
 import { takeEvery, put } from 'redux-saga/effects'
+import translate from 'moji-translate'
 
 function* processMessage(actionObj) {
   yield put({
@@ -12,7 +13,7 @@ function* processMessage(actionObj) {
     type: 'SAVE_MESSAGE',
     payload: {
       author: 'Bot',
-      message: actionObj.message
+      message: translate.translate(actionObj.message)
     }
   })
 }
