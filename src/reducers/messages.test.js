@@ -1,14 +1,15 @@
-import { messages } from './messages'
-import { SAVE_MESSAGE } from '../constants/ActionTypes'
+import { messages, initialState } from './messages'
+import { saveMessage } from '../actions'
 
 describe('reducers test', () => {
   it('should handle initial state', () => {
     expect(messages(undefined, {}))
-      .toEqual([{ author: 'Bot', message: 'Write a message and see it translated to emojis!' }])
+      .toEqual([{ author: initialState[0].author, message: initialState[0].message }])
   })
 
   it('should handle SAVE_MESSAGE', () => {
-    expect(messages([], { type: SAVE_MESSAGE, payload: { author: 'You', message: 'Hello World' } }))
-      .toEqual([{ author: 'You', message: 'Hello World' }])
+    const payload = { author: 'You', message: 'Hello World' }
+    expect(messages([], saveMessage(payload)))
+      .toEqual([{ author: payload.author, message: payload.message }])
   })
 })
