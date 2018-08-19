@@ -3,13 +3,13 @@ import { saveMessage } from '../actions'
 
 describe('reducers test', () => {
   it('should handle initial state', () => {
-    expect(messages(undefined, {}))
-      .toEqual([{ author: initialState[0].author, message: initialState[0].message }])
+    const result = [{ author: initialState[0].author, message: initialState[0].message }]
+    expect(messages(undefined, {})).toEqual(result)
   })
 
   it('should handle SAVE_MESSAGE', () => {
     const payload = { author: 'You', message: 'Hello World' }
-    expect(messages([], saveMessage(payload)))
-      .toEqual([{ author: payload.author, message: payload.message }])
+    const result = [{ author: payload.author, message: payload.message }]
+    expect(messages([], saveMessage(payload))).toEqual(result)
   })
 })
