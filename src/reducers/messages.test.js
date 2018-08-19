@@ -1,7 +1,7 @@
 import { messages, initialState } from './messages'
 import { saveMessage } from '../actions'
 
-describe('reducers test', () => {
+describe('messages reducer', () => {
   it('should handle initial state', () => {
     const result = [{ author: initialState[0].author, message: initialState[0].message }]
     expect(messages(undefined, {})).toEqual(result)
