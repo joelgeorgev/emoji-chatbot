@@ -1,3 +1,5 @@
+import { SAVE_MESSAGE } from '../constants/ActionTypes'
+
 const initialState = [
   {
     author: 'Bot',
@@ -7,7 +9,7 @@ const initialState = [
 
 export const messages = (state = initialState, action) => {
   switch (action.type) {
-    case 'SAVE_MESSAGE':
+    case SAVE_MESSAGE:
       const { author, message } = action.payload
       return [...state, { author, message }]
     default:

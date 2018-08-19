@@ -1,4 +1,5 @@
 import { messages } from './messages'
+import { SAVE_MESSAGE } from '../constants/ActionTypes'
 
 describe('reducers test', () => {
   it('should handle initial state', () => {
@@ -7,7 +8,7 @@ describe('reducers test', () => {
   })
 
   it('should handle SAVE_MESSAGE', () => {
-    expect(messages([], { type: 'SAVE_MESSAGE', payload: { author: 'You', message: 'Hello World' } }))
+    expect(messages([], { type: SAVE_MESSAGE, payload: { author: 'You', message: 'Hello World' } }))
       .toEqual([{ author: 'You', message: 'Hello World' }])
   })
 })
