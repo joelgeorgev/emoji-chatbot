@@ -6,7 +6,7 @@ import 'tachyons/css/tachyons.min.css'
 
 import { ChatWindowContainer } from './containers'
 import { rootReducer } from './reducers'
-import saga from './sagas'
+import { saga } from './sagas'
 import github from './assets/github.svg'
 
 const sagaMiddleware = createSagaMiddleware()
