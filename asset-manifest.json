@@ -1,9 +1,17 @@
 {
-  "main.css": "static/css/main.5a7ee718.css",
-  "main.css.map": "static/css/main.5a7ee718.css.map",
-  "main.js": "static/js/main.fc6237a8.js",
-  "main.js.map": "static/js/main.fc6237a8.js.map",
-  "static\\media\\github.svg": "static/media/github.dc6635a4.svg",
-  "static\\media\\source-sans-pro-v11-latin-regular.woff": "static/media/source-sans-pro-v11-latin-regular.f94f84eb.woff",
-  "static\\media\\source-sans-pro-v11-latin-regular.woff2": "static/media/source-sans-pro-v11-latin-regular.76d8cbb0.woff2"
+  "main.css": "/emoji-chatbot/static/css/main.596fcb08.chunk.css",
+  "main.js": "/emoji-chatbot/static/js/main.9d3b2fe8.chunk.js",
+  "main.js.map": "/emoji-chatbot/static/js/main.9d3b2fe8.chunk.js.map",
+  "static/css/1.e5ba2196.chunk.css": "/emoji-chatbot/static/css/1.e5ba2196.chunk.css",
+  "static/js/1.ce8e520a.chunk.js": "/emoji-chatbot/static/js/1.ce8e520a.chunk.js",
+  "static/js/1.ce8e520a.chunk.js.map": "/emoji-chatbot/static/js/1.ce8e520a.chunk.js.map",
+  "runtime~main.js": "/emoji-chatbot/static/js/runtime~main.d2616444.js",
+  "runtime~main.js.map": "/emoji-chatbot/static/js/runtime~main.d2616444.js.map",
+  "static/media/github.svg": "/emoji-chatbot/static/media/github.dc6635a4.svg",
+  "static/media/index.css": "/emoji-chatbot/static/media/source-sans-pro-v11-latin-regular.f94f84eb.woff",
+  "static/css/main.596fcb08.chunk.css.map": "/emoji-chatbot/static/css/main.596fcb08.chunk.css.map",
+  "static/css/1.e5ba2196.chunk.css.map": "/emoji-chatbot/static/css/1.e5ba2196.chunk.css.map",
+  "index.html": "/emoji-chatbot/index.html",
+  "precache-manifest.5089bd91168cc11da8380a430d1b2f2c.js": "/emoji-chatbot/precache-manifest.5089bd91168cc11da8380a430d1b2f2c.js",
+  "service-worker.js": "/emoji-chatbot/service-worker.js"
 }
