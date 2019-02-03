@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "9d3b2fe899ef482e7348",
-    "url": "/emoji-chatbot/static/css/main.596fcb08.chunk.css"
+    "revision": "b166a1c10af090161e0a",
+    "url": "/emoji-chatbot/static/css/main.a0cd1f43.chunk.css"
   },
   {
-    "revision": "9d3b2fe899ef482e7348",
-    "url": "/emoji-chatbot/static/js/main.9d3b2fe8.chunk.js"
+    "revision": "b166a1c10af090161e0a",
+    "url": "/emoji-chatbot/static/js/main.b166a1c1.chunk.js"
   },
   {
-    "revision": "ce8e520afb1e4d4fd8e1",
-    "url": "/emoji-chatbot/static/css/1.e5ba2196.chunk.css"
+    "revision": "1abb154fa4927d53c3b7",
+    "url": "/emoji-chatbot/static/css/1.b1299bb9.chunk.css"
   },
   {
-    "revision": "ce8e520afb1e4d4fd8e1",
-    "url": "/emoji-chatbot/static/js/1.ce8e520a.chunk.js"
+    "revision": "1abb154fa4927d53c3b7",
+    "url": "/emoji-chatbot/static/js/1.1abb154f.chunk.js"
   },
   {
     "revision": "d261644454f517383056",
@@ -32,7 +32,7 @@ self.__precacheManifest = [
     "url": "/emoji-chatbot/static/media/source-sans-pro-v11-latin-regular.f94f84eb.woff"
   },
   {
-    "revision": "e3c1ccce800d3eee13a5e10946264524",
+    "revision": "fc89c51f3e0e216924b296b0e47f3c2a",
     "url": "/emoji-chatbot/index.html"
   }
 ];
