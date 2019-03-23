@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/emoji-chatbot/precache-manifest.bc168282349fd1ceecf289581add084e.js"
+  "/emoji-chatbot/precache-manifest.20de6684061e02a8fb1c1e57dad5a4e2.js"
 );
 
 workbox.clientsClaim();
