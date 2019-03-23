@@ -13,21 +13,19 @@ const sagaMiddleware = createSagaMiddleware()
 const store = createStore(rootReducer, applyMiddleware(sagaMiddleware))
 sagaMiddleware.run(saga)
 
-export class App extends React.PureComponent {
-  render() {
-    return (
-      <div className='flex flex-column w-80 mw8 vh-100 center pv4'>
-        <div className='flex flex-auto flex-column self-center'>
-          <Provider store={store}>
-            <ChatWindowContainer />
-          </Provider>
-        </div>
-        <div className='self-center'>
-          <a href='https://github.com/joelgeorgev/emoji-chatbot'>
-            <img src={github} alt='GitHub' />
-          </a>
-        </div>
+export const App = () => {
+  return (
+    <div className='flex flex-column w-80 mw8 vh-100 center pv4'>
+      <div className='flex flex-auto flex-column self-center'>
+        <Provider store={store}>
+          <ChatWindowContainer />
+        </Provider>
       </div>
-    )
-  }
+      <div className='self-center'>
+        <a href='https://github.com/joelgeorgev/emoji-chatbot'>
+          <img src={github} alt='GitHub' />
+        </a>
+      </div>
+    </div>
+  )
 }
