@@ -12,7 +12,7 @@ export const ComposeMessage = ({ onSendMessage }) => {
       const composedMessage = message.trim()
       if (composedMessage) {
         onSendMessage(composedMessage)
-        setMessage(composedMessage)
+        setMessage('')
       }
     }
   }
