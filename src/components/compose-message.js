@@ -3,9 +3,7 @@ import React, { useState } from 'react'
 export const ComposeMessage = ({ onSendMessage }) => {
   const [message, setMessage] = useState('')
 
-  const handleChange = (e) => {
-    setMessage(e.target.value)
-  }
+  const handleChange = (e) => setMessage(e.target.value)
 
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {

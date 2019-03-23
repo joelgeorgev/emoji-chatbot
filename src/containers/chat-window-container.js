@@ -11,9 +11,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onSendMessage: (message) => {
-      dispatch(sendMessage(message))
-    }
+    onSendMessage: (message) => dispatch(sendMessage(message))
   }
 }
 
