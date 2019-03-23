@@ -1,39 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-export class ComposeMessage extends React.PureComponent {
+export const ComposeMessage = ({ onSendMessage }) => {
+  const [message, setMessage] = useState('')
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      message: ''
-    }
+  const handleChange = (e) => {
+    setMessage(e.target.value)
   }
 
-  handleKeyPress = (e) => {
+  const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
-      const message = this.state.message.trim()
-      if (message) {
-        this.props.onSendMessage(message)
-        this.setState({ message: '' })
+      const composedMessage = message.trim()
+      if (composedMessage) {
+        onSendMessage(composedMessage)
+        setMessage(composedMessage)
       }
     }
   }
 
-  handleChange = (e) => {
-    this.setState({ message: e.target.value })
-  }
-
-  render() {
-    return (
-      <div className='self-center ma4'>
-        <input
-          type='text'
-          placeholder='Write a message'
-          value={this.state.message}
-          className='ba b--light-silver pa2'
-          onChange={this.handleChange}
-          onKeyPress={this.handleKeyPress} />
-      </div>
-    )
-  }
+  return (
+    <div className='self-center ma4'>
+      <input
+        type='text'
+        placeholder='Write a message'
+        value={message}
+        className='ba b--light-silver pa2'
+        onChange={handleChange}
+        onKeyPress={handleKeyPress} />
+    </div>
+  )
 }
