@@ -1,17 +1,17 @@
 {
-  "main.css": "/emoji-chatbot/static/css/main.a9b2d1a0.chunk.css",
-  "main.js": "/emoji-chatbot/static/js/main.c7f6d1a4.chunk.js",
-  "main.js.map": "/emoji-chatbot/static/js/main.c7f6d1a4.chunk.js.map",
+  "main.css": "/emoji-chatbot/static/css/main.79403b10.chunk.css",
+  "main.js": "/emoji-chatbot/static/js/main.e9ea42d7.chunk.js",
+  "main.js.map": "/emoji-chatbot/static/js/main.e9ea42d7.chunk.js.map",
   "runtime~main.js": "/emoji-chatbot/static/js/runtime~main.147b2d5c.js",
   "runtime~main.js.map": "/emoji-chatbot/static/js/runtime~main.147b2d5c.js.map",
   "static/css/2.5edeb4cf.chunk.css": "/emoji-chatbot/static/css/2.5edeb4cf.chunk.css",
   "static/js/2.f18fc0ac.chunk.js": "/emoji-chatbot/static/js/2.f18fc0ac.chunk.js",
   "static/js/2.f18fc0ac.chunk.js.map": "/emoji-chatbot/static/js/2.f18fc0ac.chunk.js.map",
   "index.html": "/emoji-chatbot/index.html",
-  "precache-manifest.20de6684061e02a8fb1c1e57dad5a4e2.js": "/emoji-chatbot/precache-manifest.20de6684061e02a8fb1c1e57dad5a4e2.js",
+  "precache-manifest.9b60d4296a504c82d71f1a5a3c83cd36.js": "/emoji-chatbot/precache-manifest.9b60d4296a504c82d71f1a5a3c83cd36.js",
   "service-worker.js": "/emoji-chatbot/service-worker.js",
   "static/css/2.5edeb4cf.chunk.css.map": "/emoji-chatbot/static/css/2.5edeb4cf.chunk.css.map",
-  "static/css/main.a9b2d1a0.chunk.css.map": "/emoji-chatbot/static/css/main.a9b2d1a0.chunk.css.map",
+  "static/css/main.79403b10.chunk.css.map": "/emoji-chatbot/static/css/main.79403b10.chunk.css.map",
   "static/media/github.svg": "/emoji-chatbot/static/media/github.dc6635a4.svg",
   "static/media/index.css": "/emoji-chatbot/static/media/source-sans-pro-v11-latin-regular.f94f84eb.woff"
 }
