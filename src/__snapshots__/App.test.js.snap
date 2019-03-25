@@ -14,7 +14,7 @@ exports[`snapshot test 1`] = `
         className="ba br2 pa2 overflow-auto"
       >
         <div
-          className="flex flex-column ma2 min-h24"
+          className="flex flex-column ma2 min-h24 h24"
         >
           <div
             className="flex justify-start"
