@@ -2,7 +2,7 @@
 
 exports[`snapshot test 1`] = `
 <div
-  className="flex flex-column w-80 mw8 vh-100 center pv4"
+  className="flex flex-column w-80 mw8 vh-100 center pt4 pb5"
 >
   <div
     className="flex flex-auto flex-column self-center"
@@ -14,7 +14,7 @@ exports[`snapshot test 1`] = `
         className="ba br2 pa2 overflow-auto"
       >
         <div
-          className="flex flex-column ma2 min-h24 h24"
+          className="flex flex-column ma2 min-h20 h20"
         >
           <div
             className="flex justify-start"

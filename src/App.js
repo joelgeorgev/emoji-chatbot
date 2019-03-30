@@ -15,7 +15,7 @@ sagaMiddleware.run(saga)
 
 export const App = () => {
   return (
-    <div className='flex flex-column w-80 mw8 vh-100 center pv4'>
+    <div className='flex flex-column w-80 mw8 vh-100 center pt4 pb5'>
       <div className='flex flex-auto flex-column self-center'>
         <Provider store={store}>
           <ChatWindowContainer />

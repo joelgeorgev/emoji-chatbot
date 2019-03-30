@@ -4,12 +4,12 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-.min-h24 {
-  min-height: 24rem;
+.min-h20 {
+  min-height: 20rem;
 }
 
-.h24 {
-  height: 24rem;
+.h20 {
+  height: 20rem;
 }
 
 /* source-sans-pro-regular - latin */
