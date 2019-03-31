@@ -20,6 +20,7 @@ export const ComposeMessage = ({ onSendMessage }) => {
       <input
         type='text'
         placeholder='Write a message'
+        aria-label='Write a message'
         value={message}
         className='ba b--light-silver pa2'
         onChange={handleChange}

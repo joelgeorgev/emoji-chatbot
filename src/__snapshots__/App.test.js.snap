@@ -1,57 +1,62 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`snapshot test 1`] = `
-<div
-  className="flex flex-column w-80 mw8 vh-100 center pt4 pb5"
+<main
+  role="main"
 >
-  <div
-    className="flex flex-auto flex-column self-center"
+  <section
+    className="flex flex-column w-80 mw8 vh-100 center pt4 pb5"
   >
     <div
-      className="flex flex-column pa2 w5"
+      className="flex flex-auto flex-column self-center"
     >
       <div
-        className="ba br2 pa2 overflow-auto"
+        className="flex flex-column pa2 w5"
       >
         <div
-          className="flex flex-column ma2 min-h20 h20"
+          className="ba br2 pa2 overflow-auto"
         >
           <div
-            className="flex justify-start"
+            className="flex flex-column ma2 min-h20 h20"
           >
             <div
-              className="br2 ma1 pa2 bg-light-gray"
+              className="flex justify-start"
             >
-              Write a message and see it translated to emojis!
+              <div
+                className="br2 ma1 pa2 bg-light-gray"
+              >
+                Write a message and see it translated to emojis!
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div
-        className="self-center ma4"
-      >
-        <input
-          className="ba b--light-silver pa2"
-          onChange={[Function]}
-          onKeyPress={[Function]}
-          placeholder="Write a message"
-          type="text"
-          value=""
-        />
+        <div
+          className="self-center ma4"
+        >
+          <input
+            aria-label="Write a message"
+            className="ba b--light-silver pa2"
+            onChange={[Function]}
+            onKeyPress={[Function]}
+            placeholder="Write a message"
+            type="text"
+            value=""
+          />
+        </div>
       </div>
     </div>
-  </div>
-  <div
-    className="self-center"
-  >
-    <a
-      href="https://github.com/joelgeorgev/emoji-chatbot"
+    <div
+      className="self-center"
     >
-      <img
-        alt="GitHub"
-        src="github.svg"
-      />
-    </a>
-  </div>
-</div>
+      <a
+        href="https://github.com/joelgeorgev/emoji-chatbot"
+      >
+        <img
+          alt="GitHub"
+          src="github.svg"
+        />
+      </a>
+    </div>
+  </section>
+</main>
 `;
