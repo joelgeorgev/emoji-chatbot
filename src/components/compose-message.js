@@ -24,7 +24,8 @@ export const ComposeMessage = ({ onSendMessage }) => {
         value={message}
         className='ba b--light-silver pa2'
         onChange={handleChange}
-        onKeyPress={handleKeyPress} />
+        onKeyPress={handleKeyPress}
+      />
     </div>
   )
 }

@@ -1,9 +1,11 @@
 import { SAVE_MESSAGE } from '../constants/ActionTypes'
 
-export const initialState = [{
-  author: 'Bot',
-  message: 'Write a message and see it translated to emojis!'
-}]
+export const initialState = [
+  {
+    author: 'Bot',
+    message: 'Write a message and see it translated to emojis!'
+  }
+]
 
 export const messages = (state = initialState, action) => {
   switch (action.type) {

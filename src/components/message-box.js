@@ -1,16 +1,16 @@
 import React from 'react'
 
 export const MessageBox = ({ message }) => {
-  const styleClass = message.author === 'You' ?
-    {
-      position: 'justify-end',
-      theme: 'bg-gray white'
-    }
-    :
-    {
-      position: 'justify-start',
-      theme: 'bg-light-gray'
-    }
+  const styleClass =
+    message.author === 'You'
+      ? {
+          position: 'justify-end',
+          theme: 'bg-gray white'
+        }
+      : {
+          position: 'justify-start',
+          theme: 'bg-light-gray'
+        }
 
   return (
     <div className={`flex ${styleClass.position}`}>

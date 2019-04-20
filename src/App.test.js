@@ -11,8 +11,6 @@ it('smoke test', () => {
 })
 
 it('snapshot test', () => {
-  const tree = renderer.create(
-    <App />
-  ).toJSON()
+  const tree = renderer.create(<App />).toJSON()
   expect(tree).toMatchSnapshot()
 })
