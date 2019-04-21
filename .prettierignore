@@ -1,6 +1,4 @@
 build
 coverage
-*.html
-*.css
 src/registerServiceWorker.js
 src/moji-translate
