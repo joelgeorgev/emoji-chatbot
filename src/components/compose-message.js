@@ -4,7 +4,6 @@ export const ComposeMessage = ({ onSendMessage }) => {
   const [message, setMessage] = useState('')
 
   const handleChange = (e) => setMessage(e.target.value)
-
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
       const composedMessage = message.trim()
