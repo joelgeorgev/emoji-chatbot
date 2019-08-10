@@ -1,4 +1,14 @@
 import React, { useState } from 'react'
+import styled from 'styled-components'
+
+const Wrapper = styled.div`
+  margin: 2rem;
+`
+
+const Input = styled.input`
+  border: 1px solid #aaa;
+  padding: 0.5rem;
+`
 
 export const ComposeMessage = ({ onSendMessage }) => {
   const [message, setMessage] = useState('')
@@ -15,16 +25,15 @@ export const ComposeMessage = ({ onSendMessage }) => {
   }
 
   return (
-    <div className='self-center ma4'>
-      <input
+    <Wrapper>
+      <Input
         type='text'
         placeholder='Write a message'
         aria-label='Write a message'
         value={message}
-        className='ba b--light-silver pa2'
         onChange={handleChange}
         onKeyPress={handleKeyPress}
       />
-    </div>
+    </Wrapper>
   )
 }
