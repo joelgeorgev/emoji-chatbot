@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  margin: 2rem;
+  margin-top: 2rem;
 `
 
 const Input = styled.input`

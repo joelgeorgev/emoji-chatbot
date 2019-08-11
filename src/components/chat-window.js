@@ -8,7 +8,6 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 16rem;
-  padding: 0.5rem;
 `
 
 export const ChatWindow = ({ messages, onSendMessage }) => (

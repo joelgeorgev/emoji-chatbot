@@ -6,8 +6,8 @@ import { MessageBox } from '.'
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 22rem;
-  height: 22rem;
+  min-height: 20rem;
+  height: 20rem;
   border: 1px solid;
   border-radius: 0.25rem;
   padding: 1rem;

@@ -21,14 +21,18 @@ const Section = styled.section`
   max-width: 64rem;
   height: 100vh;
   margin: 0 auto;
-  padding-top: 2rem;
-  padding-bottom: 4rem;
 `
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
+  margin-top: 2rem;
+  overflow: auto;
+`
+
+const Footer = styled.div`
+  margin: 2rem;
 `
 
 export const App = () => (
@@ -39,11 +43,11 @@ export const App = () => (
           <ChatWindowContainer />
         </Provider>
       </Wrapper>
-      <>
+      <Footer>
         <a href='https://github.com/joelgeorgev/emoji-chatbot'>
           <img src={github} alt='GitHub' />
         </a>
-      </>
+      </Footer>
     </Section>
   </main>
 )
