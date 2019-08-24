@@ -4,8 +4,8 @@ import styled from 'styled-components'
 const Wrapper = styled.div`
   display: flex;
   justify-content: flex-end;
-  ${(props) =>
-    props.isBot &&
+  ${({ isBot }) =>
+    isBot &&
     `
       justify-content: flex-start;
     `}
@@ -17,8 +17,8 @@ const Message = styled.div`
   padding: 0.5rem;
   color: #fff;
   background-color: #777;
-  ${(props) =>
-    props.isBot &&
+  ${({ isBot }) =>
+    isBot &&
     `
       color: #000;
       background-color: #eee;
