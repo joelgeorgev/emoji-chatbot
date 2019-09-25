@@ -1,6 +1,7 @@
 # Emoji Chatbot
 
 [![Build Status](https://travis-ci.org/joelgeorgev/emoji-chatbot.svg?branch=master)](https://travis-ci.org/joelgeorgev/emoji-chatbot)
+[![Coverage Status](https://coveralls.io/repos/github/joelgeorgev/emoji-chatbot/badge.svg?branch=master)](https://coveralls.io/github/joelgeorgev/emoji-chatbot?branch=master)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 > A chatbot that translates words to emojis. Uses [moji-translate](https://www.npmjs.com/package/moji-translate) for translation.
