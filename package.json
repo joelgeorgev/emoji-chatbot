@@ -4,13 +4,13 @@
   "description": "A chatbot that translates words to emojis.",
   "dependencies": {
     "emojilib": "^2.4.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-redux": "^7.1.0",
-    "react-scripts": "^3.0.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-redux": "^7.1.1",
+    "react-scripts": "^3.1.2",
     "redux": "^4.0.4",
-    "redux-saga": "^1.0.5",
-    "styled-components": "^4.3.2"
+    "redux-saga": "^1.1.1",
+    "styled-components": "^4.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -22,9 +22,9 @@
     "deploy": "gh-pages -d build"
   },
   "devDependencies": {
-    "gh-pages": "^2.1.0",
+    "gh-pages": "^2.1.1",
     "prettier": "^1.18.2",
-    "react-test-renderer": "^16.8.6"
+    "react-test-renderer": "^16.9.0"
   },
   "repository": "https://github.com/joelgeorgev/emoji-chatbot",
   "keywords": [
