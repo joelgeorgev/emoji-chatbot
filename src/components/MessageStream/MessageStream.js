@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components'
 
-import { MessageBox } from '.'
+import { MessageBox } from '..'
 
 const Wrapper = styled.div`
   display: flex;

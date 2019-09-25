@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
 
-import { ChatWindow } from '../components'
-import { sendMessage } from '../actions'
-import * as selectors from '../reducers'
+import { ChatWindow } from '../../components'
+import { sendMessage } from '../../actions'
+import * as selectors from '../../reducers'
 
 const mapStateToProps = (state) => ({
   messages: selectors.getMessages(state)

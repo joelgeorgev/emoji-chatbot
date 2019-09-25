@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { MessageStream, ComposeMessage } from '.'
+import { MessageStream, ComposeMessage } from '..'
 
 const Wrapper = styled.div`
   display: flex;
