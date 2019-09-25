@@ -2,16 +2,16 @@ import { messages, initialState } from './messages'
 import { saveMessage } from '../actions'
 
 describe('messages reducer', () => {
-  it('should handle initial state', () => {
-    const result = [
+  test('should handle initial state', () => {
+    const expected = [
       { author: initialState[0].author, message: initialState[0].message }
     ]
-    expect(messages(undefined, {})).toEqual(result)
+    expect(messages(undefined, {})).toEqual(expected)
   })
 
-  it('should handle SAVE_MESSAGE', () => {
+  test('should handle SAVE_MESSAGE', () => {
     const payload = { author: 'You', message: 'Hello World' }
-    const result = [{ author: payload.author, message: payload.message }]
-    expect(messages([], saveMessage(payload))).toEqual(result)
+    const expected = [{ author: payload.author, message: payload.message }]
+    expect(messages([], saveMessage(payload))).toEqual(expected)
   })
 })
