@@ -1,9 +1,9 @@
 import { SEND_MESSAGE, SAVE_MESSAGE } from '../constants/ActionTypes'
 
 // UI actions
-export const sendMessage = (message) => ({
+export const sendMessage = (text) => ({
   type: SEND_MESSAGE,
-  message
+  text
 })
 
 // Saga actions

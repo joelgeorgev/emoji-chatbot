@@ -3,20 +3,16 @@ import { SEND_MESSAGE, SAVE_MESSAGE } from '../constants/ActionTypes'
 
 describe('actions', () => {
   test('sendMessage should create SEND_MESSAGE action', () => {
-    const message = 'Hello World'
-    const expected = { type: SEND_MESSAGE, message }
-    expect(sendMessage(message)).toEqual(expected)
+    const text = 'Hello World'
+    const expected = { type: SEND_MESSAGE, text }
+    expect(sendMessage(text)).toEqual(expected)
   })
 
   test('saveMessage should create SAVE_MESSAGE action', () => {
-    const payload = { author: 'You', message: 'Hello World' }
-    const expected = {
-      type: SAVE_MESSAGE,
-      payload: {
-        author: payload.author,
-        message: payload.message
-      }
-    }
+    const author = 'You'
+    const text = 'Hello World'
+    const payload = { author, text }
+    const expected = { type: SAVE_MESSAGE, payload }
     expect(saveMessage(payload)).toEqual(expected)
   })
 })

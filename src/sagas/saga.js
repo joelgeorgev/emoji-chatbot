@@ -5,9 +5,9 @@ import { saveMessage } from '../actions'
 import { SEND_MESSAGE } from '../constants/ActionTypes'
 
 function* processMessage(action) {
-  yield put(saveMessage({ author: 'You', message: action.message }))
+  yield put(saveMessage({ author: 'You', text: action.text }))
   yield put(
-    saveMessage({ author: 'Bot', message: translate.translate(action.message) })
+    saveMessage({ author: 'Bot', text: translate.translate(action.text) })
   )
 }
 

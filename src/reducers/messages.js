@@ -3,15 +3,15 @@ import { SAVE_MESSAGE } from '../constants/ActionTypes'
 export const initialState = [
   {
     author: 'Bot',
-    message: 'Write a message and see it translated to emojis!'
+    text: 'Write a message and see it translated to emojis!'
   }
 ]
 
 export const messages = (state = initialState, action) => {
   switch (action.type) {
     case SAVE_MESSAGE:
-      const { author, message } = action.payload
-      return [...state, { author, message }]
+      const { author, text } = action.payload
+      return [...state, { author, text }]
     default:
       return state
   }

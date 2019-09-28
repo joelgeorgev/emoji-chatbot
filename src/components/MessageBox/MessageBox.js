@@ -26,7 +26,7 @@ const Message = styled.div`
 `
 
 export const MessageBox = ({ message }) => {
-  const { author, message: text } = message
+  const { author, text } = message
   const isBot = author === 'Bot'
 
   return (
