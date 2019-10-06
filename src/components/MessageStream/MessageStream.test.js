@@ -5,9 +5,9 @@ import { MessageStream } from '.'
 
 describe('MessageStream', () => {
   describe('When given an array of messages', () => {
+    const [firstText, secondText] = ['Hello', 'Hi']
     const createMessage = (text) => ({ author: '', text })
     const createMessages = (texts) => texts.map(createMessage)
-    const [firstText, secondText] = ['Hello', 'Hi']
 
     test('should render the messages', () => {
       const { getByText } = render(
