@@ -8,7 +8,7 @@ describe('MessageBox', () => {
     const getDefaultProps = () => ({ message: { author: '', text: '' } })
     const createProps = (props) => ({ ...getDefaultProps(), ...props })
 
-    test('should render the message', () => {
+    test('renders the message', () => {
       const text = 'Hello World'
       const { getByText } = render(
         <MessageBox {...createProps({ message: { text } })} />

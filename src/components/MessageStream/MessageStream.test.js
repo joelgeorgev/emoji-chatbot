@@ -9,7 +9,7 @@ describe('MessageStream', () => {
     const createMessage = (text) => ({ author: '', text })
     const createMessages = (texts) => texts.map(createMessage)
 
-    test('should render the messages', () => {
+    test('renders the messages', () => {
       const { getByText } = render(
         <MessageStream messages={createMessages([firstText, secondText])} />
       )

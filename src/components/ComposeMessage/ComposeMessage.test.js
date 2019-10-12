@@ -31,7 +31,7 @@ describe('ComposeMessage', () => {
   }
 
   describe('When user types a message and presses ENTER key', () => {
-    test('should invoke callback function', () => {
+    test('invokes callback function', () => {
       const { onSendMessage, inputElement } = arrange()
 
       simulateMessageSubmitByUser({ inputElement })
@@ -42,7 +42,7 @@ describe('ComposeMessage', () => {
   })
 
   describe('When user types an empty message and presses ENTER key', () => {
-    test('should NOT invoke callback function', () => {
+    test('does NOT invoke callback function', () => {
       const { onSendMessage, inputElement } = arrange()
 
       simulateMessageSubmitByUser({ inputElement, message: '' })
@@ -52,7 +52,7 @@ describe('ComposeMessage', () => {
   })
 
   describe('When user types a message with extra spaces and presses ENTER key', () => {
-    test('should invoke callback function with the trimmed message', () => {
+    test('invokes callback function with the trimmed message', () => {
       const { onSendMessage, inputElement } = arrange()
 
       simulateMessageSubmitByUser({
@@ -66,7 +66,7 @@ describe('ComposeMessage', () => {
   })
 
   describe('When user types a message and presses any other key', () => {
-    test('should NOT invoke callback function', () => {
+    test('does NOT invoke callback function', () => {
       const { onSendMessage, inputElement } = arrange()
 
       simulateMessageSubmitByUser({

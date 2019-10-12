@@ -8,7 +8,7 @@ describe('ChatWindow', () => {
   const createProps = (props) => ({ ...getDefaultProps(), ...props })
 
   describe('When given an array of messages', () => {
-    test('should render the messages', () => {
+    test('renders the messages', () => {
       const text = 'Hello World'
       const { getByText } = render(
         <ChatWindow {...createProps({ messages: [{ text }] })} />
@@ -20,7 +20,7 @@ describe('ChatWindow', () => {
 
   describe('When given a callback function', () => {
     describe('When user enters a message', () => {
-      test('should invoke callback function', () => {
+      test('invokes callback function', () => {
         const onSendMessage = jest.fn()
         const userMessage = 'Hello World'
         const { getByPlaceholderText } = render(

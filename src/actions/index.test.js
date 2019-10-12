@@ -2,13 +2,13 @@ import { sendMessage, saveMessage } from './index'
 import { SEND_MESSAGE, SAVE_MESSAGE } from '../constants/ActionTypes'
 
 describe('actions', () => {
-  test('sendMessage should create SEND_MESSAGE action', () => {
+  test('sendMessage creates SEND_MESSAGE action', () => {
     const text = 'Hello World'
     const expected = { type: SEND_MESSAGE, text }
     expect(sendMessage(text)).toEqual(expected)
   })
 
-  test('saveMessage should create SAVE_MESSAGE action', () => {
+  test('saveMessage creates SAVE_MESSAGE action', () => {
     const author = 'You'
     const text = 'Hello World'
     const payload = { author, text }
