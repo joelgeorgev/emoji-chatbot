@@ -3,33 +3,33 @@ import { render, fireEvent } from '@testing-library/react'
 
 import { ComposeMessage } from '.'
 
+const userMessage = 'Hello World'
+
+const arrange = () => {
+  const onSendMessage = jest.fn()
+  const { getByPlaceholderText } = render(
+    <ComposeMessage onSendMessage={onSendMessage} />
+  )
+  const inputElement = getByPlaceholderText('Write a message')
+
+  return { onSendMessage, inputElement }
+}
+
+const simulateMessageSubmitByUser = ({
+  inputElement,
+  message = userMessage,
+  shouldPressEnterKey = true
+}) => {
+  fireEvent.change(inputElement, { target: { value: message } })
+
+  if (shouldPressEnterKey) {
+    fireEvent.keyPress(inputElement, { key: 'Enter', keyCode: 13 })
+  } else {
+    fireEvent.keyPress(inputElement, { key: 'J', code: 74, charCode: 74 })
+  }
+}
+
 describe('ComposeMessage', () => {
-  const userMessage = 'Hello World'
-
-  const arrange = () => {
-    const onSendMessage = jest.fn()
-    const { getByPlaceholderText } = render(
-      <ComposeMessage onSendMessage={onSendMessage} />
-    )
-    const inputElement = getByPlaceholderText('Write a message')
-
-    return { onSendMessage, inputElement }
-  }
-
-  const simulateMessageSubmitByUser = ({
-    inputElement,
-    message = userMessage,
-    shouldPressEnterKey = true
-  }) => {
-    fireEvent.change(inputElement, { target: { value: message } })
-
-    if (shouldPressEnterKey) {
-      fireEvent.keyPress(inputElement, { key: 'Enter', keyCode: 13 })
-    } else {
-      fireEvent.keyPress(inputElement, { key: 'J', code: 74, charCode: 74 })
-    }
-  }
-
   describe('When user types a message and presses ENTER key', () => {
     test('invokes callback function', () => {
       const { onSendMessage, inputElement } = arrange()

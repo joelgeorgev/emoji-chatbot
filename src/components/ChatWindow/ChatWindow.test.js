@@ -3,10 +3,10 @@ import { render, fireEvent } from '@testing-library/react'
 
 import { ChatWindow } from '.'
 
-describe('ChatWindow', () => {
-  const getDefaultProps = () => ({ messages: [], onSendMessage: jest.fn() })
-  const createProps = (props) => ({ ...getDefaultProps(), ...props })
+const createDefaultProps = () => ({ messages: [], onSendMessage: () => {} })
+const createProps = (props) => ({ ...createDefaultProps(), ...props })
 
+describe('ChatWindow', () => {
   describe('When given an array of messages', () => {
     test('renders the messages', () => {
       const text = 'Hello World'
