@@ -6,12 +6,12 @@ import styled from 'styled-components'
 
 import { ChatWindowContainer } from './containers'
 import { rootReducer } from './reducers'
-import { saga } from './sagas'
+import { rootSaga } from './sagas'
 import github from './assets/github.svg'
 
 const sagaMiddleware = createSagaMiddleware()
 const store = createStore(rootReducer, applyMiddleware(sagaMiddleware))
-sagaMiddleware.run(saga)
+sagaMiddleware.run(rootSaga)
 
 const Section = styled.section`
   display: flex;
