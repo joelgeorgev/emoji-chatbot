@@ -1,7 +1,7 @@
 import { runSaga } from 'redux-saga'
 
 import { processMessage } from './processMessage'
-import { saveMessage } from '../actions'
+import { sendMessage, saveMessage } from '../actions'
 
 jest.mock('../moji-translate', () => ({
   translate: () => '🐱‍🏍'
@@ -12,7 +12,7 @@ describe('processMessage saga', () => {
     const text = 'Hello'
     const dispatch = jest.fn()
 
-    runSaga({ dispatch }, processMessage, { text })
+    runSaga({ dispatch }, processMessage, sendMessage(text))
 
     expect(dispatch).toHaveBeenCalledTimes(2)
     expect(dispatch).toHaveBeenNthCalledWith(
