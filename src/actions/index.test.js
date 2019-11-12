@@ -1,4 +1,4 @@
-import { sendMessage, saveMessage } from './index'
+import { sendMessage, saveMessage } from '.'
 import { SEND_MESSAGE, SAVE_MESSAGE } from '../constants/ActionTypes'
 
 describe('actions', () => {
