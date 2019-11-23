@@ -1,11 +1,13 @@
 import * as selectors from '.'
 
 describe('Selectors', () => {
-  const { getMessages } = selectors
+  describe('getMessages', () => {
+    const { getMessages } = selectors
 
-  test('getMessages selects messages from state', () => {
-    const messages = [{ text: 'Hello World' }]
+    test('selects messages from state', () => {
+      const messages = [{ text: 'Hello World' }]
 
-    expect(getMessages({ messages })).toEqual(messages)
+      expect(getMessages({ messages })).toEqual(messages)
+    })
   })
 })
