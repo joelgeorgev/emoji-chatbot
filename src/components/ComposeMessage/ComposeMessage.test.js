@@ -60,6 +60,7 @@ describe('ComposeMessage', () => {
       const { onSendMessage, inputElement } = arrange()
 
       fireEvent.change(inputElement, { target: { value: userMessage } })
+      fireEvent.keyPress(inputElement, { key: 'J', code: 74, charCode: 74 })
 
       expect(onSendMessage).toHaveBeenCalledTimes(0)
     })
