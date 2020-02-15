@@ -3,18 +3,18 @@ import { render } from '@testing-library/react'
 
 import { MessageBox } from '.'
 
-const createDefaultProps = () => ({ message: { author: '', text: '' } })
-const createProps = (props) => ({ ...createDefaultProps(), ...props })
+const createDefaultProps = () => ({
+  message: { author: '', text: '' }
+})
+
+const renderMessageBox = (props) =>
+  render(<MessageBox {...createDefaultProps()} {...props} />)
 
 describe('MessageBox', () => {
-  describe('When given a message object', () => {
-    test('renders the message', () => {
-      const text = 'Hello World'
-      const { getByText } = render(
-        <MessageBox {...createProps({ message: { text } })} />
-      )
+  test('renders a message', () => {
+    const text = 'Hello World'
+    const { getByText } = renderMessageBox({ message: { text } })
 
-      expect(getByText(text)).toBeDefined()
-    })
+    expect(getByText(text)).toBeDefined()
   })
 })

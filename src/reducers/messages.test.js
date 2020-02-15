@@ -2,7 +2,7 @@ import { messages } from './messages'
 import { saveMessage } from '../actions'
 
 describe('messages reducer', () => {
-  describe('When no action is given', () => {
+  describe('Given NO action', () => {
     test('returns initial state', () => {
       const expected = [
         {
@@ -17,8 +17,9 @@ describe('messages reducer', () => {
 
   test('handles SAVE_MESSAGE action', () => {
     const payload = { author: 'You', text: 'Hello World' }
+    const action = saveMessage(payload)
     const expected = [payload]
 
-    expect(messages([], saveMessage(payload))).toEqual(expected)
+    expect(messages([], action)).toEqual(expected)
   })
 })
