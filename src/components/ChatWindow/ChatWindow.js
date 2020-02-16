@@ -10,9 +10,9 @@ const Wrapper = styled.div`
   width: 16rem;
 `
 
-export const ChatWindow = ({ messages, onSendMessage }) => (
+export const ChatWindow = ({ messages, handleSendMessage }) => (
   <Wrapper>
     <MessageStream messages={messages} />
-    <ComposeMessage onSendMessage={onSendMessage} />
+    <ComposeMessage onSendMessage={handleSendMessage} />
   </Wrapper>
 )

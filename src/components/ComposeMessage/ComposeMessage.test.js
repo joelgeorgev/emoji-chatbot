@@ -17,45 +17,45 @@ const arrange = () => {
   return { onSendMessage, inputElement }
 }
 
-const simulateMessageSubmission = (inputElement, message) => {
+const sendMessage = (inputElement, message) => {
   fireEvent.change(inputElement, { target: { value: message } })
   fireEvent.keyPress(inputElement, { key: 'Enter', keyCode: 13 })
 }
 
 describe('ComposeMessage', () => {
-  describe('When the user submits a message', () => {
+  describe('When the user sends a message', () => {
     test('invokes the callback function', () => {
       const { onSendMessage, inputElement } = arrange()
 
-      simulateMessageSubmission(inputElement, userMessage)
+      sendMessage(inputElement, userMessage)
 
       expect(onSendMessage).toHaveBeenCalledTimes(1)
       expect(onSendMessage).toHaveBeenCalledWith(userMessage)
     })
   })
 
-  describe('When the user submits an empty message', () => {
+  describe('When the user sends an empty message', () => {
     test('does NOT invoke the callback function', () => {
       const { onSendMessage, inputElement } = arrange()
 
-      simulateMessageSubmission(inputElement, '')
+      sendMessage(inputElement, '')
 
       expect(onSendMessage).toHaveBeenCalledTimes(0)
     })
   })
 
-  describe('When the user submits a message with extra spaces', () => {
+  describe('When the user sends a message with extra spaces', () => {
     test('invokes the callback function with the trimmed message', () => {
       const { onSendMessage, inputElement } = arrange()
 
-      simulateMessageSubmission(inputElement, `     ${userMessage}     `)
+      sendMessage(inputElement, `     ${userMessage}     `)
 
       expect(onSendMessage).toHaveBeenCalledTimes(1)
       expect(onSendMessage).toHaveBeenCalledWith(userMessage)
     })
   })
 
-  describe('When the user does NOT submit the message', () => {
+  describe('When the user does NOT send any message', () => {
     test('does NOT invoke the callback function', () => {
       const { onSendMessage, inputElement } = arrange()
 

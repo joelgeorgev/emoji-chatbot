@@ -9,7 +9,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  onSendMessage: (message) => dispatch(sendMessage(message))
+  handleSendMessage: (message) => dispatch(sendMessage(message))
 })
 
 export const ChatWindowContainer = connect(

@@ -5,7 +5,7 @@ import { ChatWindow } from '.'
 
 const createDefaultProps = () => ({
   messages: [],
-  onSendMessage: () => {}
+  handleSendMessage: () => {}
 })
 
 const renderChatWindow = (props) =>
@@ -22,20 +22,20 @@ describe('ChatWindow', () => {
     expect(getByText(secondText)).toBeDefined()
   })
 
-  describe('When the user submits a message', () => {
+  describe('When the user sends a message', () => {
     test('invokes the callback function', () => {
-      const onSendMessage = jest.fn()
+      const handleSendMessage = jest.fn()
       const userMessage = 'Hello World'
       const { getByPlaceholderText } = renderChatWindow({
-        onSendMessage
+        handleSendMessage
       })
       const inputElement = getByPlaceholderText('Write a message')
 
       fireEvent.change(inputElement, { target: { value: userMessage } })
       fireEvent.keyPress(inputElement, { key: 'Enter', keyCode: 13 })
 
-      expect(onSendMessage).toHaveBeenCalledTimes(1)
-      expect(onSendMessage).toHaveBeenCalledWith(userMessage)
+      expect(handleSendMessage).toHaveBeenCalledTimes(1)
+      expect(handleSendMessage).toHaveBeenCalledWith(userMessage)
     })
   })
 })
