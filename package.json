@@ -28,7 +28,8 @@
       "src/**/*.{js,jsx}",
       "!src/index.js",
       "!src/registerServiceWorker.js",
-      "!src/moji-translate/*"
+      "!src/moji-translate/*",
+      "!src/containers/*"
     ]
   },
   "devDependencies": {
