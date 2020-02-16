@@ -12,6 +12,14 @@ const renderChatWindow = (props) =>
   render(<ChatWindow {...createDefaultProps()} {...props} />)
 
 describe('ChatWindow', () => {
+  beforeEach(() => {
+    window.HTMLElement.prototype.scrollIntoView = jest.fn()
+  })
+
+  afterEach(() => {
+    jest.resetAllMocks()
+  })
+
   test('renders an array of messages', () => {
     const [firstText, secondText] = ['Hello', 'World']
     const { getByText } = renderChatWindow({

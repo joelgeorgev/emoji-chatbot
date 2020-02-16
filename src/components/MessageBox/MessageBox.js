@@ -31,7 +31,9 @@ export const MessageBox = ({ message }) => {
 
   return (
     <Wrapper isBot={isBot}>
-      <Message isBot={isBot}>{text}</Message>
+      <Message isBot={isBot} className='message'>
+        {text}
+      </Message>
     </Wrapper>
   )
 }

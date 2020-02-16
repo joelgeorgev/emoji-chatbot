@@ -1,7 +1,8 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 
 import { MessageBox } from '..'
+import { scrollToElement } from '../../utils'
 
 const Wrapper = styled.div`
   display: flex;
@@ -14,18 +15,15 @@ const Wrapper = styled.div`
   overflow: auto;
 `
 
-export const MessageStream = ({ messages }) => {
-  const ref = useRef(null)
-
+export const MessageStream = ({ messages, scrollToNode = scrollToElement }) => {
   useEffect(() => {
-    const { current: element } = ref
-    const { scrollHeight, clientHeight } = element
-    const maxScrollTop = scrollHeight - clientHeight
-    element.scrollTop = maxScrollTop > 0 ? maxScrollTop : 0
+    if (messages.length) {
+      scrollToNode('.message', messages.length - 1, { behavior: 'smooth' })
+    }
   })
 
   return (
-    <Wrapper ref={ref}>
+    <Wrapper>
       {messages.map((message, index) => (
         <MessageBox key={index} message={message} />
       ))}
