@@ -1,9 +1,5 @@
-import { sendMessage, saveUserMessage, saveBotMessage } from '.'
-import {
-  SEND_MESSAGE,
-  SAVE_USER_MESSAGE,
-  SAVE_BOT_MESSAGE
-} from '../constants/ActionTypes'
+import { sendMessage, saveTranslatedMessage } from '.'
+import { SEND_MESSAGE, SAVE_TRANSLATED_MESSAGE } from '../constants/ActionTypes'
 
 const text = 'Hello'
 
@@ -17,19 +13,10 @@ describe('actions', () => {
     })
   })
 
-  describe('saveUserMessage', () => {
-    test('creates SAVE_USER_MESSAGE action', () => {
-      expect(saveUserMessage(text)).toEqual({
-        type: SAVE_USER_MESSAGE,
-        payload: { text }
-      })
-    })
-  })
-
-  describe('saveBotMessage', () => {
-    test('creates SAVE_BOT_MESSAGE action', () => {
-      expect(saveBotMessage(text)).toEqual({
-        type: SAVE_BOT_MESSAGE,
+  describe('saveTranslatedMessage', () => {
+    test('creates SAVE_TRANSLATED_MESSAGE action', () => {
+      expect(saveTranslatedMessage(text)).toEqual({
+        type: SAVE_TRANSLATED_MESSAGE,
         payload: { text }
       })
     })
