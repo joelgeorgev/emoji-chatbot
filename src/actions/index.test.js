@@ -1,22 +1,37 @@
-import { sendMessage, saveMessage } from '.'
-import { SEND_MESSAGE, SAVE_MESSAGE } from '../constants/ActionTypes'
+import { sendMessage, saveUserMessage, saveBotMessage } from '.'
+import {
+  SEND_MESSAGE,
+  SAVE_USER_MESSAGE,
+  SAVE_BOT_MESSAGE
+} from '../constants/ActionTypes'
+
+const text = 'Hello'
 
 describe('actions', () => {
   describe('sendMessage', () => {
     test('creates SEND_MESSAGE action', () => {
-      const text = 'Hello World'
-      const expected = { type: SEND_MESSAGE, text }
-
-      expect(sendMessage(text)).toEqual(expected)
+      expect(sendMessage(text)).toEqual({
+        type: SEND_MESSAGE,
+        payload: { text }
+      })
     })
   })
 
-  describe('saveMessage', () => {
-    test('creates SAVE_MESSAGE action', () => {
-      const payload = { author: 'You', text: 'Hello World' }
-      const expected = { type: SAVE_MESSAGE, payload }
+  describe('saveUserMessage', () => {
+    test('creates SAVE_USER_MESSAGE action', () => {
+      expect(saveUserMessage(text)).toEqual({
+        type: SAVE_USER_MESSAGE,
+        payload: { text }
+      })
+    })
+  })
 
-      expect(saveMessage(payload)).toEqual(expected)
+  describe('saveBotMessage', () => {
+    test('creates SAVE_BOT_MESSAGE action', () => {
+      expect(saveBotMessage(text)).toEqual({
+        type: SAVE_BOT_MESSAGE,
+        payload: { text }
+      })
     })
   })
 })

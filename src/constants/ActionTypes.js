@@ -1,5 +1,3 @@
-// UI actions
 export const SEND_MESSAGE = 'SEND_MESSAGE'
-
-// Saga actions
-export const SAVE_MESSAGE = 'SAVE_MESSAGE'
+export const SAVE_USER_MESSAGE = 'SAVE_USER_MESSAGE'
+export const SAVE_BOT_MESSAGE = 'SAVE_BOT_MESSAGE'

@@ -12,7 +12,7 @@ const renderMessageBox = (props) =>
 
 describe('MessageBox', () => {
   test('renders a message', () => {
-    const text = 'Hello World'
+    const text = 'Hello'
     const { getByText } = renderMessageBox({ message: { text } })
 
     expect(getByText(text)).toBeDefined()

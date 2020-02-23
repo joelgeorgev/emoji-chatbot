@@ -1,33 +1,28 @@
 import { runSaga } from 'redux-saga'
 
 import { processMessage } from './processMessage'
-import { sendMessage, saveMessage } from '../actions'
+import { sendMessage, saveUserMessage, saveBotMessage } from '../actions'
 
 jest.mock('../moji-translate', () => ({
   translate: () => '🐱‍🏍'
 }))
 
+const userMessage = 'Hello'
+
 const executeSaga = (dispatch, text) =>
   runSaga({ dispatch }, processMessage, sendMessage(text))
 
 describe('processMessage saga', () => {
-  const text = 'Hello'
   let dispatch
 
   beforeEach(() => {
     dispatch = jest.fn()
-    executeSaga(dispatch, text)
+    executeSaga(dispatch, userMessage)
   })
 
   test('dispatches actions to save user and bot messages', () => {
     expect(dispatch).toHaveBeenCalledTimes(2)
-    expect(dispatch).toHaveBeenNthCalledWith(
-      1,
-      saveMessage({ author: 'You', text })
-    )
-    expect(dispatch).toHaveBeenNthCalledWith(
-      2,
-      saveMessage({ author: 'Bot', text: '🐱‍🏍' })
-    )
+    expect(dispatch).toHaveBeenNthCalledWith(1, saveUserMessage(userMessage))
+    expect(dispatch).toHaveBeenNthCalledWith(2, saveBotMessage('🐱‍🏍'))
   })
 })

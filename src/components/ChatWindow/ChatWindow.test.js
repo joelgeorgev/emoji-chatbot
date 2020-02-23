@@ -33,7 +33,7 @@ describe('ChatWindow', () => {
   describe('When the user sends a message', () => {
     test('invokes the callback function', () => {
       const handleSendMessage = jest.fn()
-      const userMessage = 'Hello World'
+      const userMessage = 'Hello'
       const { getByPlaceholderText } = renderChatWindow({
         handleSendMessage
       })

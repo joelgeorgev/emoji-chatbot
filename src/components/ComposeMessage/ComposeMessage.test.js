@@ -5,7 +5,7 @@ import { ComposeMessage } from '.'
 
 const renderComposeMessage = (props) => render(<ComposeMessage {...props} />)
 
-const userMessage = 'Hello World'
+const userMessage = 'Hello'
 
 const arrange = () => {
   const onSendMessage = jest.fn()

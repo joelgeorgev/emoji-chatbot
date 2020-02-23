@@ -1,13 +1,20 @@
-import { SEND_MESSAGE, SAVE_MESSAGE } from '../constants/ActionTypes'
+import {
+  SEND_MESSAGE,
+  SAVE_USER_MESSAGE,
+  SAVE_BOT_MESSAGE
+} from '../constants/ActionTypes'
 
-// UI actions
 export const sendMessage = (text) => ({
   type: SEND_MESSAGE,
-  text
+  payload: { text }
 })
 
-// Saga actions
-export const saveMessage = (payload) => ({
-  type: SAVE_MESSAGE,
-  payload
+export const saveUserMessage = (text) => ({
+  type: SAVE_USER_MESSAGE,
+  payload: { text }
+})
+
+export const saveBotMessage = (text) => ({
+  type: SAVE_BOT_MESSAGE,
+  payload: { text }
 })
