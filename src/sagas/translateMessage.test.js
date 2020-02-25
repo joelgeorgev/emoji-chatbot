@@ -20,7 +20,7 @@ describe('translateMessage saga', () => {
     executeSaga(dispatch, userMessage)
   })
 
-  test('dispatches action to save the translated message', () => {
+  test('dispatches an action to save the translated message', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith(saveTranslatedMessage('🐱‍🏍'))
   })
