@@ -1,4 +1,4 @@
-import { SEND_MESSAGE, SAVE_TRANSLATED_MESSAGE } from '../constants/ActionTypes'
+import { SEND_MESSAGE, MESSAGE_TRANSLATED } from '../constants/ActionTypes'
 
 export const initialState = [
   {
@@ -14,7 +14,7 @@ export const messages = (
   switch (type) {
     case SEND_MESSAGE:
       return [...state, { author: 'You', text }]
-    case SAVE_TRANSLATED_MESSAGE:
+    case MESSAGE_TRANSLATED:
       return [...state, { author: 'Bot', text }]
     default:
       return state

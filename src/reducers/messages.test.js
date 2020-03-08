@@ -1,5 +1,5 @@
 import { messages } from './messages'
-import { sendMessage, saveTranslatedMessage } from '../actions'
+import { sendMessage, messageTranslated } from '../actions'
 
 const text = 'Hello'
 
@@ -31,8 +31,8 @@ describe('messages reducer', () => {
     ])
   })
 
-  test('handles SAVE_TRANSLATED_MESSAGE action', () => {
-    expect(messages([], saveTranslatedMessage(text))).toEqual([
+  test('handles MESSAGE_TRANSLATED action', () => {
+    expect(messages([], messageTranslated(text))).toEqual([
       {
         author: 'Bot',
         text

@@ -1,7 +1,7 @@
 import { runSaga } from 'redux-saga'
 
 import { translateMessage } from './translateMessage'
-import { sendMessage, saveTranslatedMessage } from '../actions'
+import { sendMessage, messageTranslated } from '../actions'
 
 jest.mock('../moji-translate', () => ({
   translate: () => '🐱‍🏍'
@@ -22,6 +22,6 @@ describe('translateMessage saga', () => {
 
   test('dispatches an action to save the translated message', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
-    expect(dispatch).toHaveBeenCalledWith(saveTranslatedMessage('🐱‍🏍'))
+    expect(dispatch).toHaveBeenCalledWith(messageTranslated('🐱‍🏍'))
   })
 })

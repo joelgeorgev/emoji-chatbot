@@ -1,11 +1,11 @@
-import { SEND_MESSAGE, SAVE_TRANSLATED_MESSAGE } from '../constants/ActionTypes'
+import { SEND_MESSAGE, MESSAGE_TRANSLATED } from '../constants/ActionTypes'
 
 export const sendMessage = (text) => ({
   type: SEND_MESSAGE,
   payload: { text }
 })
 
-export const saveTranslatedMessage = (text) => ({
-  type: SAVE_TRANSLATED_MESSAGE,
+export const messageTranslated = (text) => ({
+  type: MESSAGE_TRANSLATED,
   payload: { text }
 })
