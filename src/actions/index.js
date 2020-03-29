@@ -1,4 +1,5 @@
-import { SEND_MESSAGE, MESSAGE_TRANSLATED } from '../constants/ActionTypes'
+export const SEND_MESSAGE = 'SEND_MESSAGE'
+export const MESSAGE_TRANSLATED = 'MESSAGE_TRANSLATED'
 
 export const sendMessage = (text) => ({
   type: SEND_MESSAGE,

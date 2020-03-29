@@ -1,5 +1,9 @@
-import { sendMessage, messageTranslated } from '.'
-import { SEND_MESSAGE, MESSAGE_TRANSLATED } from '../constants/ActionTypes'
+import {
+  SEND_MESSAGE,
+  MESSAGE_TRANSLATED,
+  sendMessage,
+  messageTranslated
+} from '.'
 
 const text = 'Hello'
 

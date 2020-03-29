@@ -1,4 +1,4 @@
-import { SEND_MESSAGE, MESSAGE_TRANSLATED } from '../constants/ActionTypes'
+import { SEND_MESSAGE, MESSAGE_TRANSLATED } from '../actions'
 
 export const initialState = [
   {
