@@ -26,10 +26,10 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
+      "!src/**/*.connected.{js,jsx}",
       "!src/index.js",
       "!src/registerServiceWorker.js",
-      "!src/moji-translate/*",
-      "!src/containers/**/*"
+      "!src/moji-translate/*"
     ]
   },
   "devDependencies": {
