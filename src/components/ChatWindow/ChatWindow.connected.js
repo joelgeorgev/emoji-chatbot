@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { ChatWindow } from '../../components'
+import { ChatWindow } from '.'
 import { sendMessage } from '../../actions'
 import * as selectors from '../../reducers'
 
@@ -12,7 +12,7 @@ const mapDispatchToProps = (dispatch) => ({
   handleSendMessage: (message) => dispatch(sendMessage(message))
 })
 
-export const ChatWindowContainer = connect(
+export const ConnectedChatWindow = connect(
   mapStateToProps,
   mapDispatchToProps
 )(ChatWindow)
