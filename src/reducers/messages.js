@@ -7,15 +7,12 @@ const initialState = [
   }
 ]
 
-export const messages = (
-  state = initialState,
-  { type, payload: { text } = {} }
-) => {
+export const messages = (state = initialState, { type, payload }) => {
   switch (type) {
     case SEND_MESSAGE:
-      return [...state, { author: 'You', text }]
+      return [...state, { author: 'You', text: payload.text }]
     case MESSAGE_TRANSLATED:
-      return [...state, { author: 'Bot', text }]
+      return [...state, { author: 'Bot', text: payload.text }]
     default:
       return state
   }
