@@ -1,6 +1,6 @@
 import { SEND_MESSAGE, MESSAGE_TRANSLATED } from '../actions'
 
-export const initialState = [
+const initialState = [
   {
     author: 'Bot',
     text: 'Write a message and see it translated to emojis!'
