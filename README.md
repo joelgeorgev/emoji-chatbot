@@ -1,6 +1,6 @@
 # Emoji Chatbot
 
-[![Build Status](https://travis-ci.org/joelgeorgev/emoji-chatbot.svg?branch=master)](https://travis-ci.org/joelgeorgev/emoji-chatbot)
+![CI](https://github.com/joelgeorgev/emoji-chatbot/workflows/CI/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/joelgeorgev/emoji-chatbot/badge.svg?branch=master)](https://coveralls.io/github/joelgeorgev/emoji-chatbot?branch=master)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
