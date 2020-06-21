@@ -7,7 +7,7 @@ jest.mock('../moji-translate', () => ({
   translate: () => '🐱‍🏍'
 }))
 
-const userMessage = 'Hello'
+const sentMessage = 'Hello'
 
 const executeSaga = (dispatch, text) =>
   runSaga({ dispatch }, translateMessage, sendMessage(text))
@@ -17,11 +17,16 @@ describe('translateMessage saga', () => {
 
   beforeEach(() => {
     dispatch = jest.fn()
-    executeSaga(dispatch, userMessage)
   })
 
-  test('dispatches an action to save the translated message', () => {
-    expect(dispatch).toHaveBeenCalledTimes(1)
-    expect(dispatch).toHaveBeenCalledWith(messageTranslated('🐱‍🏍'))
+  describe('When a message is sent', () => {
+    beforeEach(() => {
+      executeSaga(dispatch, sentMessage)
+    })
+
+    test('dispatches an action to save the translated message', () => {
+      expect(dispatch).toHaveBeenCalledTimes(1)
+      expect(dispatch).toHaveBeenCalledWith(messageTranslated('🐱‍🏍'))
+    })
   })
 })
