@@ -5,12 +5,12 @@ import createSagaMiddleware from 'redux-saga'
 import styled from 'styled-components'
 
 import { ConnectedChatWindow } from './components'
-import { rootReducer } from './reducers'
+import { reducer } from './reducers'
 import { rootSaga } from './sagas'
 import github from './assets/github.svg'
 
 const sagaMiddleware = createSagaMiddleware()
-const store = createStore(rootReducer, applyMiddleware(sagaMiddleware))
+const store = createStore(reducer, applyMiddleware(sagaMiddleware))
 sagaMiddleware.run(rootSaga)
 
 const Section = styled.section`
