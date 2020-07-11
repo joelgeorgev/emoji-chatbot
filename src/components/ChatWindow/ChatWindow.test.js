@@ -11,6 +11,8 @@ const createDefaultProps = () => ({
 const renderChatWindow = (props) =>
   render(<ChatWindow {...createDefaultProps()} {...props} />)
 
+const userMessage = 'Hello'
+
 describe('ChatWindow', () => {
   beforeEach(() => {
     window.HTMLElement.prototype.scrollIntoView = jest.fn()
@@ -33,14 +35,11 @@ describe('ChatWindow', () => {
   describe('When the user sends a message', () => {
     test('invokes the callback function', () => {
       const handleSendMessage = jest.fn()
-      const userMessage = 'Hello'
-      const { getByPlaceholderText } = renderChatWindow({
-        handleSendMessage
-      })
+      const { getByPlaceholderText } = renderChatWindow({ handleSendMessage })
       const inputElement = getByPlaceholderText('Write a message')
 
       fireEvent.change(inputElement, { target: { value: userMessage } })
-      fireEvent.keyPress(inputElement, { key: 'Enter', keyCode: 13 })
+      fireEvent.submit(inputElement)
 
       expect(handleSendMessage).toHaveBeenCalledTimes(1)
       expect(handleSendMessage).toHaveBeenCalledWith(userMessage)
