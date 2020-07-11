@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import createSagaMiddleware from 'redux-saga'
 import styled from 'styled-components'
 
-import { ConnectedChatWindow } from './components'
+import { ChatWindow } from './components'
 import { reducer } from './reducers'
 import { rootSaga } from './sagas'
 import github from './assets/github.svg'
@@ -40,7 +40,7 @@ export const App = () => (
     <Section>
       <Wrapper>
         <Provider store={store}>
-          <ConnectedChatWindow />
+          <ChatWindow />
         </Provider>
       </Wrapper>
       <Footer>

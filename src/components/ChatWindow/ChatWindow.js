@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { MessageStream, ComposeMessage } from '..'
+import { ConnectedMessageStream, ConnectedComposeMessage } from '..'
 
 const Wrapper = styled.div`
   display: flex;
@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 
 export const ChatWindow = ({ messages, handleSendMessage }) => (
   <Wrapper>
-    <MessageStream messages={messages} />
-    <ComposeMessage onSendMessage={handleSendMessage} />
+    <ConnectedMessageStream />
+    <ConnectedComposeMessage />
   </Wrapper>
 )

@@ -1,48 +1,24 @@
 import React from 'react'
-import { render, fireEvent } from '@testing-library/react'
+import { render } from '@testing-library/react'
 
 import { ChatWindow } from '.'
+import {
+  ConnectedMessageStream,
+  ConnectedComposeMessage
+} from '../../components'
 
-const createDefaultProps = () => ({
-  messages: [],
-  handleSendMessage: () => {}
-})
+jest.mock('../../components', () => ({
+  ConnectedMessageStream: jest.fn(() => null),
+  ConnectedComposeMessage: jest.fn(() => null)
+}))
 
-const renderChatWindow = (props) =>
-  render(<ChatWindow {...createDefaultProps()} {...props} />)
-
-const userMessage = 'Hello'
+const renderChatWindow = () => render(<ChatWindow />)
 
 describe('ChatWindow', () => {
-  beforeEach(() => {
-    window.HTMLElement.prototype.scrollIntoView = jest.fn()
-  })
+  test('renders connected message stream AND connected compose message', () => {
+    renderChatWindow()
 
-  afterEach(() => {
-    jest.resetAllMocks()
-  })
-
-  test('renders an array of messages', () => {
-    const [firstText, secondText] = ['Hello', 'World']
-    const { getByText } = renderChatWindow({
-      messages: [{ text: firstText }, { text: secondText }]
-    })
-
-    expect(getByText(firstText)).toBeDefined()
-    expect(getByText(secondText)).toBeDefined()
-  })
-
-  describe('When the user sends a message', () => {
-    test('invokes the callback function', () => {
-      const handleSendMessage = jest.fn()
-      const { getByPlaceholderText } = renderChatWindow({ handleSendMessage })
-      const inputElement = getByPlaceholderText('Write a message')
-
-      fireEvent.change(inputElement, { target: { value: userMessage } })
-      fireEvent.submit(inputElement)
-
-      expect(handleSendMessage).toHaveBeenCalledTimes(1)
-      expect(handleSendMessage).toHaveBeenCalledWith(userMessage)
-    })
+    expect(ConnectedMessageStream).toHaveBeenCalledTimes(1)
+    expect(ConnectedComposeMessage).toHaveBeenCalledTimes(1)
   })
 })

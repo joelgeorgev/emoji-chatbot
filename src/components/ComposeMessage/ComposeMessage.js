@@ -10,7 +10,7 @@ const Input = styled.input`
   padding: 0.5rem;
 `
 
-export const ComposeMessage = ({ onSendMessage }) => {
+export const ComposeMessage = ({ handleSendMessage }) => {
   const [message, setMessage] = useState('')
 
   const handleChange = (event) => setMessage(event.target.value)
@@ -20,7 +20,7 @@ export const ComposeMessage = ({ onSendMessage }) => {
 
     const composedMessage = message.trim()
     if (composedMessage) {
-      onSendMessage(composedMessage)
+      handleSendMessage(composedMessage)
       setMessage('')
     }
   }
