@@ -15,7 +15,7 @@ jest.mock('../../components', () => ({
 const renderChatWindow = () => render(<ChatWindow />)
 
 describe('ChatWindow', () => {
-  test('renders connected message stream AND connected compose message', () => {
+  test('renders', () => {
     renderChatWindow()
 
     expect(ConnectedMessageStream).toHaveBeenCalledTimes(1)
