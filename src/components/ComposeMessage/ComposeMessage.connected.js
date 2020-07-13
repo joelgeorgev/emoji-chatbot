@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 import { ComposeMessage } from '.'
 import { sendMessage } from '../../actions'
 
-const mapDispatchToProps = (dispatch) => ({
-  handleSendMessage: (message) => dispatch(sendMessage(message))
-})
+const mapDispatchToProps = {
+  handleSendMessage: (message) => sendMessage(message)
+}
 
 export const ConnectedComposeMessage = connect(
   null,
