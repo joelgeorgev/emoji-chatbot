@@ -1,20 +1,20 @@
 import React from 'react'
-import { render } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 
 import { MessageBox } from '.'
 
-const createDefaultProps = () => ({
-  message: { author: '', text: '' }
-})
+const createMessage = (text) => ({ author: '', text })
 
-const renderMessageBox = (props) =>
-  render(<MessageBox {...createDefaultProps()} {...props} />)
+const renderMessageBox = (text) =>
+  render(<MessageBox message={createMessage(text)} />)
+
+const findMessage = (text) => screen.getByText(text)
 
 describe('MessageBox', () => {
   test('renders a message', () => {
     const text = 'Hello'
-    const { getByText } = renderMessageBox({ message: { text } })
+    renderMessageBox(text)
 
-    expect(getByText(text)).toBeDefined()
+    expect(findMessage(text)).toBeDefined()
   })
 })

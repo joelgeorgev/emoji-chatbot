@@ -1,12 +1,21 @@
 import React from 'react'
-import { render } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 
 import { MessageStream } from '.'
 
-const renderMessageStream = (props) => render(<MessageStream {...props} />)
-
 const createMessage = (text) => ({ author: '', text })
 const createMessages = (texts) => texts.map(createMessage)
+
+const renderMessageStream = (props) => render(<MessageStream {...props} />)
+
+const findMessage = (text) => screen.getByText(text)
+
+const arrange = (messages) => {
+  const scrollToNode = jest.fn()
+  renderMessageStream({ messages: createMessages(messages), scrollToNode })
+
+  return scrollToNode
+}
 
 describe('MessageStream', () => {
   beforeEach(() => {
@@ -21,20 +30,14 @@ describe('MessageStream', () => {
     const [firstText, secondText] = ['Hello', 'World']
 
     test('renders the messages', () => {
-      const { getByText } = renderMessageStream({
-        messages: createMessages([firstText, secondText])
-      })
+      arrange([firstText, secondText])
 
-      expect(getByText(firstText)).toBeDefined()
-      expect(getByText(secondText)).toBeDefined()
+      expect(findMessage(firstText)).toBeDefined()
+      expect(findMessage(secondText)).toBeDefined()
     })
 
     test('invokes the scroll function on the last message', () => {
-      const scrollToNode = jest.fn()
-      renderMessageStream({
-        messages: createMessages([firstText, secondText]),
-        scrollToNode
-      })
+      const scrollToNode = arrange([firstText, secondText])
 
       expect(scrollToNode).toHaveBeenCalledTimes(1)
       expect(scrollToNode).toHaveBeenCalledWith('.message', 1, {
@@ -45,11 +48,7 @@ describe('MessageStream', () => {
 
   describe('Given an empty array of messages', () => {
     test('does NOT invoke the scroll function', () => {
-      const scrollToNode = jest.fn()
-      renderMessageStream({
-        messages: [],
-        scrollToNode
-      })
+      const scrollToNode = arrange([])
 
       expect(scrollToNode).toHaveBeenCalledTimes(0)
     })
