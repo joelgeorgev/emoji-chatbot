@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.js": "/static/js/main.b41e669f.chunk.js",
-    "main.js.map": "/static/js/main.b41e669f.chunk.js.map",
+    "main.js": "/static/js/main.c84166ed.chunk.js",
+    "main.js.map": "/static/js/main.c84166ed.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.c802f4ba.js",
     "runtime-main.js.map": "/static/js/runtime-main.c802f4ba.js.map",
     "static/js/2.49b75edb.chunk.js": "/static/js/2.49b75edb.chunk.js",
     "static/js/2.49b75edb.chunk.js.map": "/static/js/2.49b75edb.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.7850e0d67198180350d3891a9f763cc3.js": "/precache-manifest.7850e0d67198180350d3891a9f763cc3.js",
+    "precache-manifest.5d9defe04bb319e6fc198f44408fb47a.js": "/precache-manifest.5d9defe04bb319e6fc198f44408fb47a.js",
     "service-worker.js": "/service-worker.js",
     "static/js/2.49b75edb.chunk.js.LICENSE.txt": "/static/js/2.49b75edb.chunk.js.LICENSE.txt",
-    "static/media/github.svg": "/static/media/github.dc6635a4.svg",
+    "static/media/github.svg": "/static/media/github.e626734b.svg",
     "static/media/source-sans-pro-v11-latin-regular.woff2": "/static/media/source-sans-pro-v11-latin-regular.76d8cbb0.woff2",
     "static/media/source-sans-pro-v11-latin-regular.woff": "/static/media/source-sans-pro-v11-latin-regular.f94f84eb.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.c802f4ba.js",
     "static/js/2.49b75edb.chunk.js",
-    "static/js/main.b41e669f.chunk.js"
+    "static/js/main.c84166ed.chunk.js"
   ]
 }
