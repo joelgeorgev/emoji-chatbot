@@ -23,11 +23,14 @@ const Main = styled.main`
   margin: 0 auto;
 `
 
+const Header = styled.header`
+  text-align: center;
+`
+
 const Section = styled.section`
   display: flex;
   flex-direction: column;
   flex: 1;
-  margin-top: 2rem;
   overflow: auto;
 `
 
@@ -37,6 +40,9 @@ const Footer = styled.footer`
 
 export const App = () => (
   <Main>
+    <Header>
+      <h1>Emoji Chatbot</h1>
+    </Header>
     <Section>
       <article>
         <Provider store={store}>
