@@ -16,7 +16,7 @@ const Message = styled.div`
   border-radius: 0.25rem;
   padding: 0.5rem;
   color: #fff;
-  background-color: #777;
+  background-color: #555;
   ${({ isBot }) =>
     isBot &&
     `
