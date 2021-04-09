@@ -1,11 +1,7 @@
-interface Options {
-  behavior: 'smooth'
-}
-
 export const scrollToElement = (
   selector: string,
   index: number,
-  options: Options
+  options: ScrollIntoViewOptions
 ): void => {
   const node = document.querySelectorAll(selector)[index]
 
