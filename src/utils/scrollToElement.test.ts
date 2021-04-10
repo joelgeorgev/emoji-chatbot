@@ -5,7 +5,6 @@ interface Node {
 }
 
 const selector = 'selector'
-const options: ScrollIntoViewOptions = { behavior: 'smooth' }
 
 const createQuerySelectorSpy = (nodeList: Node[] = []) =>
   jest
@@ -26,7 +25,7 @@ describe('scrollToElement', () => {
 
     beforeEach(() => {
       querySelectorSpy = createQuerySelectorSpy()
-      scrollToElement(selector, 0, options)
+      scrollToElement(selector, 0, {})
     })
 
     test('invokes document.querySelectorAll', () => {
@@ -47,7 +46,7 @@ describe('scrollToElement', () => {
 
     describe('When index is provided as 0', () => {
       beforeEach(() => {
-        scrollToElement(selector, 0, options)
+        scrollToElement(selector, 0, {})
       })
 
       test('invokes scrollIntoView on the first node', () => {
@@ -58,7 +57,7 @@ describe('scrollToElement', () => {
 
     describe('When index is provided as 1', () => {
       beforeEach(() => {
-        scrollToElement(selector, 1, options)
+        scrollToElement(selector, 1, {})
       })
 
       test('invokes scrollIntoView on the second node', () => {
@@ -68,6 +67,8 @@ describe('scrollToElement', () => {
     })
 
     describe('When scroll options are provided', () => {
+      const options: ScrollIntoViewOptions = { behavior: 'smooth' }
+
       beforeEach(() => {
         scrollToElement(selector, 0, options)
       })
