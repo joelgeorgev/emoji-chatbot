@@ -1,8 +1,14 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import styled from 'styled-components'
 
 import { MessageBox } from '..'
 import { scrollToElement } from '../../utils'
+import { Message } from '../../types'
+
+interface Props {
+  messages: Message[]
+  scrollToNode?: typeof scrollToElement
+}
 
 const Wrapper = styled.div`
   display: flex;
@@ -15,7 +21,10 @@ const Wrapper = styled.div`
   overflow: auto;
 `
 
-export const MessageStream = ({ messages, scrollToNode = scrollToElement }) => {
+export const MessageStream = ({
+  messages,
+  scrollToNode = scrollToElement
+}: Props) => {
   useEffect(() => {
     if (messages.length) {
       scrollToNode('.message', messages.length - 1, { behavior: 'smooth' })

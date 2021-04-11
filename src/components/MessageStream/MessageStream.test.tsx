@@ -1,16 +1,25 @@
-import React from 'react'
 import { render, screen } from '@testing-library/react'
 
 import { MessageStream } from '.'
+import { scrollToElement } from '../../utils'
+import { Message } from '../../types'
 
-const createMessage = (text) => ({ author: '', text })
-const createMessages = (texts) => texts.map(createMessage)
+interface Props {
+  messages: Message[]
+  scrollToNode?: typeof scrollToElement
+}
 
-const renderMessageStream = (props) => render(<MessageStream {...props} />)
+const createMessage = (text: string): Message => ({ author: 'You', text })
+const createMessages = (texts: string[]): Message[] => texts.map(createMessage)
 
-const findMessage = (text) => screen.getByText(text)
+const renderMessageStream = (props: Props) =>
+  render(<MessageStream {...props} />)
 
-const arrange = (messages) => {
+const findMessage = (text: string) => screen.getByText(text)
+
+const arrange = (
+  messages: string[]
+): jest.MockedFunction<typeof scrollToElement> => {
   const scrollToNode = jest.fn()
   renderMessageStream({ messages: createMessages(messages), scrollToNode })
 
