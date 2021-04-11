@@ -15,7 +15,7 @@ const createMessages = (texts: string[]): Message[] => texts.map(createMessage)
 const renderMessageStream = (props: Props) =>
   render(<MessageStream {...props} />)
 
-const findMessage = (text: string) => screen.getByText(text)
+const findMessage = (text: string): HTMLElement => screen.getByText(text)
 
 const arrange = (
   messages: string[]

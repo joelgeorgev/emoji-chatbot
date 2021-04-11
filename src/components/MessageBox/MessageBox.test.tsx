@@ -8,7 +8,7 @@ const createMessage = (text: string): Message => ({ author: 'You', text })
 const renderMessageBox = (text: string) =>
   render(<MessageBox message={createMessage(text)} />)
 
-const findMessage = (text: string) => screen.getByText(text)
+const findMessage = (text: string): HTMLElement => screen.getByText(text)
 
 describe('MessageBox', () => {
   test('renders a message', () => {
