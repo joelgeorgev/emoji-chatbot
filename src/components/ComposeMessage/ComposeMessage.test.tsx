@@ -1,23 +1,27 @@
-import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
 
 import { ComposeMessage } from '.'
 
+interface Props {
+  handleSendMessage(message: string): void
+}
+
 const userMessage = 'Hello'
 
-const renderComposeMessage = (props) => render(<ComposeMessage {...props} />)
+const renderComposeMessage = (props: Props) =>
+  render(<ComposeMessage {...props} />)
 
-const findInputElement = () =>
-  screen.getByRole('textbox', { name: 'Write a message' })
+const findInputElement = (): HTMLInputElement =>
+  screen.getByRole('textbox', { name: 'Write a message' }) as HTMLInputElement
 
-const arrange = () => {
+const arrange = (): jest.MockedFunction<Props['handleSendMessage']> => {
   const handleSendMessage = jest.fn()
   renderComposeMessage({ handleSendMessage })
 
   return handleSendMessage
 }
 
-const sendMessage = (message) => {
+const sendMessage = (message: string): void => {
   const inputElement = findInputElement()
 
   fireEvent.change(inputElement, { target: { value: message } })

@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
+interface Props {
+  handleSendMessage(message: string): void
+}
+
 const Form = styled.form`
   margin-top: 2rem;
 `
@@ -10,12 +14,13 @@ const Input = styled.input`
   padding: 0.5rem;
 `
 
-export const ComposeMessage = ({ handleSendMessage }) => {
-  const [message, setMessage] = useState('')
+export const ComposeMessage = ({ handleSendMessage }: Props) => {
+  const [message, setMessage] = useState<string>('')
 
-  const handleChange = (event) => setMessage(event.target.value)
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>
+    setMessage(event.target.value)
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
     const composedMessage = message.trim()
