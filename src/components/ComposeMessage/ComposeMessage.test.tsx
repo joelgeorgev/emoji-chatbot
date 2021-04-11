@@ -1,10 +1,9 @@
+import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
 
 import { ComposeMessage } from '.'
 
-interface Props {
-  handleSendMessage(message: string): void
-}
+type Props = React.ComponentProps<typeof ComposeMessage>
 
 const userMessage = 'Hello'
 

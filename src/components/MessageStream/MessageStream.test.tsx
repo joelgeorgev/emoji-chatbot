@@ -1,13 +1,11 @@
+import React from 'react'
 import { render, screen } from '@testing-library/react'
 
 import { MessageStream } from '.'
 import { scrollToElement } from '../../utils'
 import { Message } from '../../types'
 
-interface Props {
-  messages: Message[]
-  scrollToNode?: typeof scrollToElement
-}
+type Props = React.ComponentProps<typeof MessageStream>
 
 const createMessage = (text: string): Message => ({ author: 'You', text })
 const createMessages = (texts: string[]): Message[] => texts.map(createMessage)
