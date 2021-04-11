@@ -1,12 +1,6 @@
 import styled from 'styled-components'
 
-type Author = 'You' | 'Bot'
-
-interface Message {
-  author: Author
-  text: string
-}
-
+import { Message } from '../../types'
 interface Props {
   message: Message
 }
