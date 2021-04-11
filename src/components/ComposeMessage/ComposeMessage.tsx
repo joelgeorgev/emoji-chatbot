@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 interface Props {
-  handleSendMessage(message: string): void
+  handleSendMessage: (message: string) => void
 }
 
 const Form = styled.form`
