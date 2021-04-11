@@ -1,7 +1,21 @@
-import React from 'react'
 import styled from 'styled-components'
 
-const Wrapper = styled.div`
+type Author = 'You' | 'Bot'
+
+interface Message {
+  author: Author
+  text: string
+}
+
+interface Props {
+  message: Message
+}
+
+interface StyleProps {
+  isBot: boolean
+}
+
+const Wrapper = styled.div<StyleProps>`
   display: flex;
   justify-content: flex-end;
   ${({ isBot }) =>
@@ -11,7 +25,7 @@ const Wrapper = styled.div`
     `}
 `
 
-const Message = styled.div`
+const StyledMessage = styled.div<StyleProps>`
   margin: 0.25rem;
   border-radius: 0.25rem;
   padding: 0.5rem;
@@ -25,15 +39,15 @@ const Message = styled.div`
     `}
 `
 
-export const MessageBox = ({ message }) => {
+export const MessageBox = ({ message }: Props) => {
   const { author, text } = message
   const isBot = author === 'Bot'
 
   return (
     <Wrapper isBot={isBot}>
-      <Message isBot={isBot} className='message'>
+      <StyledMessage isBot={isBot} className='message'>
         {text}
-      </Message>
+      </StyledMessage>
     </Wrapper>
   )
 }
