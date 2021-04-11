@@ -16,7 +16,7 @@
     "build": "react-scripts build",
     "compile": "tsc",
     "compile:watch": "tsc --watch",
-    "format": "prettier --check \"./**/*.{ts,js,json,yml,md}\"",
+    "format": "prettier --check \"./**/*.{ts,tsx,js,json,yml,md}\"",
     "test": "react-scripts test --env=jsdom",
     "coverage": "npm test -- --coverage",
     "eject": "react-scripts eject",
