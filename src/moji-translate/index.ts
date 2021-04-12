@@ -7,7 +7,7 @@ const allEmoji = emojilib.lib;
  * @param {String} word The word to be translated
  * @returns {Bool}
  */
-function isMaybeAlreadyAnEmoji(word) {
+function isMaybeAlreadyAnEmoji(word: string): boolean {
   let ranges = [
       '\ud83c[\udf00-\udfff]', // U+1F300 to U+1F3FF
       '\ud83d[\udc00-\ude4f]', // U+1F400 to U+1F64F
@@ -21,7 +21,7 @@ function isMaybeAlreadyAnEmoji(word) {
  * @param {String} word The word to be translated
  * @returns {Array} The list of emoji translations or '' if none exist.
  */
-function getAllEmojiForWord(originalWord) {
+function getAllEmojiForWord(originalWord: string): string[] | string {
   let word = originalWord.trim().toLowerCase();
 
   if (!word || word === '' || word === 'a' || word === 'it' || word === 'is')
@@ -105,7 +105,7 @@ function getAllEmojiForWord(originalWord) {
  * @param {String} word The word to be translated.
  * @returns {String} A random emoji translation or '' if none exists.
  */
-function getEmojiForWord(word) {
+function getEmojiForWord(word: string): string {
   let translations = getAllEmojiForWord(word);
   return translations[Math.floor(Math.random() * translations.length)];
 }
@@ -117,7 +117,7 @@ function getEmojiForWord(word) {
  * @param {Bool} onlyEmoji True if the translation should omit all untranslatable words
  * @returns {String} An emoji translation!
  */
-function translate(sentence, onlyEmoji) {
+export function translate(sentence: string, onlyEmoji: boolean): string {
   let translation = '';
   let words = sentence.split(' ');
   for (let i = 0; i < words.length; i++ ) {
@@ -149,8 +149,3 @@ function translate(sentence, onlyEmoji) {
   }
   return translation;
 }
-
-module.exports.isMaybeAlreadyAnEmoji = isMaybeAlreadyAnEmoji;
-module.exports.getAllEmojiForWord = getAllEmojiForWord;
-module.exports.getEmojiForWord = getEmojiForWord;
-module.exports.translate = translate;

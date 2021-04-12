@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import translate from '../moji-translate'
+import { translate } from '../moji-translate'
 import { Message } from '../types'
 
 const defaultWelcomeMessages: Message[] = [
@@ -19,7 +19,7 @@ export const useMessages = (
     setMessages((prevMessages) =>
       prevMessages.concat(
         { author: 'You', text: message },
-        { author: 'Bot', text: translate.translate(message, false) }
+        { author: 'Bot', text: translate(message, false) }
       )
     )
   }
