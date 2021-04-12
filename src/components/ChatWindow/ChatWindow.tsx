@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
-import { ConnectedMessageStream, ConnectedComposeMessage } from '..'
+import { MessageStream, ComposeMessage } from '..'
+import { useMessages } from '../../hooks'
 
 const Wrapper = styled.div`
   display: flex;
@@ -9,9 +10,13 @@ const Wrapper = styled.div`
   width: 16rem;
 `
 
-export const ChatWindow = () => (
-  <Wrapper>
-    <ConnectedMessageStream />
-    <ConnectedComposeMessage />
-  </Wrapper>
-)
+export const ChatWindow = () => {
+  const { messages, sendMessage } = useMessages()
+
+  return (
+    <Wrapper>
+      <MessageStream messages={messages} />
+      <ComposeMessage handleSendMessage={sendMessage} />
+    </Wrapper>
+  )
+}

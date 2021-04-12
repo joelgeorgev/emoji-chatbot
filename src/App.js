@@ -1,17 +1,8 @@
 import React from 'react'
-import { createStore, applyMiddleware } from 'redux'
-import { Provider } from 'react-redux'
-import createSagaMiddleware from 'redux-saga'
 import styled from 'styled-components'
 
 import { ChatWindow } from './components'
-import { reducer } from './reducers'
-import { rootSaga } from './sagas'
 import github from './assets/github.svg'
-
-const sagaMiddleware = createSagaMiddleware()
-const store = createStore(reducer, applyMiddleware(sagaMiddleware))
-sagaMiddleware.run(rootSaga)
 
 const Main = styled.main`
   display: flex;
@@ -45,9 +36,7 @@ export const App = () => (
     </Header>
     <Section>
       <article>
-        <Provider store={store}>
-          <ChatWindow />
-        </Provider>
+        <ChatWindow />
       </article>
     </Section>
     <Footer>
