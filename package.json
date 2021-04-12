@@ -22,7 +22,7 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/**/*.{js,jsx}",
+      "src/**/*.{ts,tsx}",
       "!src/index.tsx",
       "!src/moji-translate/*"
     ]
