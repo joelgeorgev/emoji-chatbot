@@ -1,9 +1,9 @@
-import React from 'react'
+import { ComponentProps } from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
 
 import { ComposeMessage } from '.'
 
-type Props = React.ComponentProps<typeof ComposeMessage>
+type Props = ComponentProps<typeof ComposeMessage>
 
 const userMessage = 'Hello'
 
