@@ -111,50 +111,6 @@ function getEmojiForWord(word) {
 }
 
 /**
- * Returns a displayable, possibly translated english word to emoji.
- * This will either be:
- *  - a span containing the word if it cannot be translated
- *  - a span containing an emoji if only one translation exists
- *  - a span containing a <select> with all the translations if multiple exist
- * @param {String} word The word to be translated
- * @returns {HTMLElement} A <span> or <select> element as above.
- */
-function translateForDisplay(word) {
-  var node = document.createElement('span');
-
-  // Punctuation blows. Get all the punctuation at the start and end of the word.
-  let firstSymbol = '';
-  let lastSymbol = '';
-
-  while (SYMBOLS.indexOf(word[0]) !== -1) {
-    firstSymbol += word[0];
-    word = word.slice(1, word.length);
-  }
-  while (SYMBOLS.indexOf(word[word.length - 1]) !== -1) {
-    lastSymbol += word[word.length - 1];
-    word = word.slice(0, word.length - 1);
-  }
-
-  // If it's already an emoji, return it.
-  var emoji = getAllEmojiForWord(word);
-  if (emoji === '')
-    emoji = [word];
-
-  if (emoji.length === 1) {
-    node = document.createElement('span');
-    node.innerHTML = firstSymbol + emoji + lastSymbol + ' ';
-  } else {
-    node = document.createElement('select');
-    for (var i = 0; i < emoji.length; i++) {
-      var option = document.createElement('option');
-      option.textContent = firstSymbol + emoji[i] + lastSymbol + ' ';
-      node.appendChild(option);
-    }
-  }
-  return node;
-}
-
-/**
  * Translates an entire sentence to emoji. If multiple translations exist
  * for a particular word, a random emoji is picked.
  * @param {String} sentence The sentence to be translated
@@ -197,5 +153,4 @@ function translate(sentence, onlyEmoji) {
 module.exports.isMaybeAlreadyAnEmoji = isMaybeAlreadyAnEmoji;
 module.exports.getAllEmojiForWord = getAllEmojiForWord;
 module.exports.getEmojiForWord = getEmojiForWord;
-module.exports.translateForDisplay = translateForDisplay;
 module.exports.translate = translate;
