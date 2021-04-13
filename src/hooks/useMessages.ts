@@ -1,9 +1,9 @@
 import { useState } from 'react'
 
 import { translate } from '../moji-translate'
-import { Message } from '../types'
+import { Message, BotMessage, UserMessage } from '../types'
 
-const defaultWelcomeMessages: Message[] = [
+const defaultWelcomeMessages: BotMessage[] = [
   {
     author: 'Bot',
     text: 'Write a message and see it translated to emojis!'
@@ -11,17 +11,17 @@ const defaultWelcomeMessages: Message[] = [
 ]
 
 export const useMessages = (
-  welcomeMessages: Message[] = defaultWelcomeMessages
+  welcomeMessages: BotMessage[] = defaultWelcomeMessages
 ) => {
   const [messages, setMessages] = useState<Message[]>(welcomeMessages)
 
   const sendMessage = (message: string): void => {
-    setMessages((prevMessages) =>
-      prevMessages.concat(
-        { author: 'You', text: message },
-        { author: 'Bot', text: translate(message, false) }
-      )
-    )
+    const translatedMessageTuple: [UserMessage, BotMessage] = [
+      { author: 'You', text: message },
+      { author: 'Bot', text: translate(message, false) }
+    ]
+
+    setMessages((prevMessages) => prevMessages.concat(translatedMessageTuple))
   }
 
   return {
