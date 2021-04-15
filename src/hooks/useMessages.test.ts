@@ -27,7 +27,6 @@ describe('useMessages', () => {
           text: 'Hello User!'
         }
       ]
-
       const { result } = renderHook(() => useMessages(welcomeMessages))
 
       expect(result.current.messages).toEqual(welcomeMessages)
