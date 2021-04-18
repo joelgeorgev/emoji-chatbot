@@ -10,7 +10,7 @@ const userMessage = 'Hello'
 const renderComposeMessage = (props: Props) =>
   render(<ComposeMessage {...props} />)
 
-const findInputElement = (): HTMLInputElement =>
+const findTextField = (): HTMLInputElement =>
   screen.getByRole('textbox', { name: 'Write a message' }) as HTMLInputElement
 
 const arrange = (): jest.MockedFunction<Props['handleSendMessage']> => {
@@ -21,13 +21,22 @@ const arrange = (): jest.MockedFunction<Props['handleSendMessage']> => {
 }
 
 const sendMessage = (message: string): void => {
-  const inputElement = findInputElement()
+  const textField = findTextField()
 
-  fireEvent.change(inputElement, { target: { value: message } })
-  fireEvent.submit(inputElement)
+  fireEvent.change(textField, { target: { value: message } })
+  fireEvent.submit(textField)
 }
 
 describe('ComposeMessage', () => {
+  test('renders a text field', () => {
+    arrange()
+
+    const textField = findTextField()
+
+    expect(textField).toBeDefined()
+    expect(textField.placeholder).toEqual('Write a message')
+  })
+
   describe('When the user sends a message', () => {
     test('invokes the callback function', () => {
       const handleSendMessage = arrange()
@@ -43,7 +52,7 @@ describe('ComposeMessage', () => {
 
       sendMessage(userMessage)
 
-      expect(findInputElement().value).toEqual('')
+      expect(findTextField().value).toEqual('')
     })
   })
 
