@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState, ChangeEvent, FormEvent } from 'react'
 import styled from 'styled-components'
 
 interface Props {
@@ -17,10 +17,10 @@ const Input = styled.input`
 export const ComposeMessage = ({ handleSendMessage }: Props) => {
   const [message, setMessage] = useState<string>('')
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) =>
     setMessage(event.target.value)
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
     const composedMessage = message.trim()
