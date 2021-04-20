@@ -16,10 +16,6 @@ const createNode = (): Node => ({
 })
 
 describe('scrollToElement', () => {
-  afterEach(() => {
-    jest.resetAllMocks()
-  })
-
   describe('When a selector is provided', () => {
     test('invokes document.querySelectorAll', () => {
       const querySelectorSpy = createQuerySelectorSpy()

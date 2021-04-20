@@ -25,14 +25,6 @@ const arrange = (
 }
 
 describe('MessageStream', () => {
-  beforeEach(() => {
-    window.HTMLElement.prototype.scrollIntoView = jest.fn()
-  })
-
-  afterEach(() => {
-    jest.resetAllMocks()
-  })
-
   describe('Given an array of messages', () => {
     const [firstText, secondText] = ['Hello', 'World']
 
