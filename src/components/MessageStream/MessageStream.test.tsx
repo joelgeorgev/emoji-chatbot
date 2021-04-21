@@ -3,9 +3,9 @@ import { render, screen } from '@testing-library/react'
 
 import { MessageStream } from '.'
 import { scrollToElement } from '../../utils'
-import { Message } from '../../types'
 
 type Props = ComponentProps<typeof MessageStream>
+type Message = Props['messages'][number]
 
 const createMessage = (text: string): Message => ({ author: 'You', text })
 const createMessages = (texts: string[]): Message[] => texts.map(createMessage)
@@ -13,7 +13,8 @@ const createMessages = (texts: string[]): Message[] => texts.map(createMessage)
 const renderMessageStream = (props: Props) =>
   render(<MessageStream {...props} />)
 
-const findMessage = (text: string): HTMLElement => screen.getByText(text)
+const findMessage = (text: string): HTMLDivElement =>
+  screen.getByText(text) as HTMLDivElement
 
 const arrange = (
   messages: string[]
