@@ -13,11 +13,7 @@ interface StyleProps {
 const Wrapper = styled.div<StyleProps>`
   display: flex;
   justify-content: flex-end;
-  ${({ isBot }) =>
-    isBot &&
-    `
-      justify-content: flex-start;
-    `}
+  ${({ isBot }) => isBot && `justify-content: flex-start;`}
 `
 
 const StyledMessage = styled.div<StyleProps>`
