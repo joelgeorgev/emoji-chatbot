@@ -42,6 +42,7 @@
   },
   "repository": "https://github.com/joelgeorgev/emoji-chatbot",
   "keywords": [
+    "typescript",
     "React",
     "reactjs",
     "redux",
