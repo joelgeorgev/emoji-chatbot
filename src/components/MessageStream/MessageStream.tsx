@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import { MessageBox } from '..'
 import { scrollToElement } from '../../utils'
-import { Message } from '../../types'
+import type { Message } from '../../types'
 
 interface Props {
   messages: Message[]

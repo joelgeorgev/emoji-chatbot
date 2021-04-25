@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { Message } from '../../types'
+import type { Message } from '../../types'
 
 interface Props {
   message: Message

@@ -1,8 +1,8 @@
-import { ComponentProps } from 'react'
+import type { ComponentProps } from 'react'
 import { render, screen } from '@testing-library/react'
 
 import { MessageStream } from '.'
-import { scrollToElement } from '../../utils'
+import type { scrollToElement } from '../../utils'
 
 type Props = ComponentProps<typeof MessageStream>
 type Message = Props['messages'][number]

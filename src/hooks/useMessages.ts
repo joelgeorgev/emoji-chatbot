@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import { translate } from '../moji-translate'
-import { Message, BotMessage, UserMessage } from '../types'
+import type { Message, BotMessage, UserMessage } from '../types'
 
 const defaultWelcomeMessages: BotMessage[] = [
   {
