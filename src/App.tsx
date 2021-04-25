@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import { ChatWindow } from './components'
+
 import github from './assets/github.svg'
 
 const Main = styled.main`
