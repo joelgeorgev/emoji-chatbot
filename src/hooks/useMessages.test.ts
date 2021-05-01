@@ -1,10 +1,11 @@
 import { renderHook, act } from '@testing-library/react-hooks'
 
-import { useMessages } from '.'
+import { useMessages } from './useMessages'
+import { translate } from '../moji-translate'
 
-jest.mock('../moji-translate', () => ({
-  translate: () => '🐱‍🏍'
-}))
+jest.mock('../moji-translate')
+
+const mockTranslate = translate as jest.MockedFunction<typeof translate>
 
 describe('useMessages', () => {
   test('returns messages containing a welcome message', () => {
@@ -40,6 +41,9 @@ describe('useMessages', () => {
 
   describe('When `sendMessage` function is invoked', () => {
     test('returns messages containing the user message and the translated message', () => {
+      const translatedMessage = '🐱‍🏍'
+      mockTranslate.mockReturnValue(translatedMessage)
+
       const userMessage = 'Hello'
       const { result } = renderHook(() => useMessages([]))
 
@@ -49,7 +53,7 @@ describe('useMessages', () => {
 
       expect(result.current.messages).toEqual([
         { author: 'You', text: userMessage },
-        { author: 'Bot', text: '🐱‍🏍' }
+        { author: 'Bot', text: translatedMessage }
       ])
     })
   })
