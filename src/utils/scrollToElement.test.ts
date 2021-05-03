@@ -29,8 +29,8 @@ describe('scrollToElement', () => {
     expect(querySelectorAll).toHaveBeenCalledWith(selector)
   })
 
-  describe('Given document.querySelectorAll returns TWO nodes', () => {
-    describe('When index is provided as 0', () => {
+  describe('Given `document.querySelectorAll` returns TWO nodes', () => {
+    describe('When `index` is provided as 0', () => {
       test('invokes `scrollIntoView` on the first node', () => {
         const firstNode = createMockNode()
         const secondNode = createMockNode()
@@ -46,7 +46,7 @@ describe('scrollToElement', () => {
       })
     })
 
-    describe('When index is provided as 1', () => {
+    describe('When `index` is provided as 1', () => {
       test('invokes `scrollIntoView` on the second node', () => {
         const firstNode = createMockNode()
         const secondNode = createMockNode()
