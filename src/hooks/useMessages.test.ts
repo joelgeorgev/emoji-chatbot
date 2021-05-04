@@ -51,6 +51,9 @@ describe('useMessages', () => {
         result.current.sendMessage(userMessage)
       })
 
+      expect(mockTranslate).toHaveBeenCalledTimes(1)
+      expect(mockTranslate).toHaveBeenCalledWith(userMessage, false)
+
       expect(result.current.messages).toEqual([
         { author: 'You', text: userMessage },
         { author: 'Bot', text: translatedMessage }
