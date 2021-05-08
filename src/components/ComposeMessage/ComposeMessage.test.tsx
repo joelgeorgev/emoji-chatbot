@@ -4,6 +4,8 @@ import { render, screen, fireEvent } from '@testing-library/react'
 import { ComposeMessage } from '.'
 
 type Props = ComponentProps<typeof ComposeMessage>
+type HandleSendMessage = Props['handleSendMessage']
+type MockHandleSendMessage = jest.MockedFunction<HandleSendMessage>
 
 const userMessage = 'Hello'
 
@@ -13,8 +15,8 @@ const renderComposeMessage = (props: Props) =>
 const findTextField = (): HTMLInputElement =>
   screen.getByRole('textbox', { name: 'Write a message' }) as HTMLInputElement
 
-const arrange = (): jest.MockedFunction<Props['handleSendMessage']> => {
-  const handleSendMessage = jest.fn()
+const arrange = (): MockHandleSendMessage => {
+  const handleSendMessage: MockHandleSendMessage = jest.fn()
   renderComposeMessage({ handleSendMessage })
 
   return handleSendMessage

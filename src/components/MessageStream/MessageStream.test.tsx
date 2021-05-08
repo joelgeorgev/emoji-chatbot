@@ -6,6 +6,8 @@ import type { scrollToElement } from '../../utils'
 
 type Props = ComponentProps<typeof MessageStream>
 type Message = Props['messages'][number]
+type ScrollToNode = typeof scrollToElement
+type MockScrollToNode = jest.MockedFunction<ScrollToNode>
 
 const createMessage = (text: string): Message => ({ author: 'You', text })
 const createMessages = (texts: string[]): Message[] => texts.map(createMessage)
@@ -16,10 +18,8 @@ const renderMessageStream = (props: Props) =>
 const findMessage = (text: string): HTMLDivElement =>
   screen.getByText(text) as HTMLDivElement
 
-const arrange = (
-  messages: string[]
-): jest.MockedFunction<typeof scrollToElement> => {
-  const scrollToNode = jest.fn()
+const arrange = (messages: string[]): MockScrollToNode => {
+  const scrollToNode: MockScrollToNode = jest.fn()
   renderMessageStream({ messages: createMessages(messages), scrollToNode })
 
   return scrollToNode
