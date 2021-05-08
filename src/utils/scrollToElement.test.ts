@@ -9,16 +9,22 @@ interface MockNode {
   scrollIntoView: () => void
 }
 
+type QuerySelectorAll = () => MockNode[]
+
 const createMockNode = (overrides?: Partial<MockNode>): MockNode => ({
   scrollIntoView: jest.fn(),
   ...overrides
 })
 
+const createMockQuerySelectorAll = (
+  nodes: MockNode[] = []
+): jest.MockedFunction<QuerySelectorAll> => jest.fn().mockReturnValue(nodes)
+
 const selector = 'selector'
 
 describe('scrollToElement', () => {
   test('invokes `document.querySelectorAll`', () => {
-    const querySelectorAll = jest.fn().mockReturnValue([])
+    const querySelectorAll = createMockQuerySelectorAll()
     mockGetDocument.mockReturnValue({ querySelectorAll })
 
     scrollToElement(selector, 0, {})
@@ -34,9 +40,10 @@ describe('scrollToElement', () => {
       test('invokes `scrollIntoView` on the first node', () => {
         const firstNode = createMockNode()
         const secondNode = createMockNode()
-        const querySelectorAll = jest
-          .fn()
-          .mockReturnValue([firstNode, secondNode])
+        const querySelectorAll = createMockQuerySelectorAll([
+          firstNode,
+          secondNode
+        ])
         mockGetDocument.mockReturnValue({ querySelectorAll })
 
         scrollToElement(selector, 0, {})
@@ -50,9 +57,10 @@ describe('scrollToElement', () => {
       test('invokes `scrollIntoView` on the second node', () => {
         const firstNode = createMockNode()
         const secondNode = createMockNode()
-        const querySelectorAll = jest
-          .fn()
-          .mockReturnValue([firstNode, secondNode])
+        const querySelectorAll = createMockQuerySelectorAll([
+          firstNode,
+          secondNode
+        ])
         mockGetDocument.mockReturnValue({ querySelectorAll })
 
         scrollToElement(selector, 1, {})
@@ -67,7 +75,7 @@ describe('scrollToElement', () => {
     test('invokes `scrollIntoView` with the options', () => {
       const options: ScrollIntoViewOptions = { behavior: 'smooth' }
       const node = createMockNode()
-      const querySelectorAll = jest.fn().mockReturnValue([node])
+      const querySelectorAll = createMockQuerySelectorAll([node])
       mockGetDocument.mockReturnValue({ querySelectorAll })
 
       scrollToElement(selector, 0, options)

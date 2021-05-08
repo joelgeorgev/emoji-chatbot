@@ -1,1 +1,1 @@
-export const getDocument = () => document
+export const getDocument = (): Document => document
