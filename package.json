@@ -21,11 +21,16 @@
     "deploy": "gh-pages -d build"
   },
   "jest": {
+    "clearMocks": true,
     "collectCoverageFrom": [
       "src/**/*.{ts,tsx}",
       "!src/index.tsx",
       "!src/moji-translate/*"
-    ]
+    ],
+    "displayName": "Emoji Chatbot",
+    "resetMocks": true,
+    "resetModules": true,
+    "restoreMocks": true
   },
   "devDependencies": {
     "@testing-library/react": "^11.2.6",
