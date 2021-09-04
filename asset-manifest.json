@@ -4,17 +4,17 @@
     "main.js.map": "/static/js/main.08890c25.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.b983407e.js",
     "runtime-main.js.map": "/static/js/runtime-main.b983407e.js.map",
-    "static/js/2.7701188a.chunk.js": "/static/js/2.7701188a.chunk.js",
-    "static/js/2.7701188a.chunk.js.map": "/static/js/2.7701188a.chunk.js.map",
+    "static/js/2.d12ab976.chunk.js": "/static/js/2.d12ab976.chunk.js",
+    "static/js/2.d12ab976.chunk.js.map": "/static/js/2.d12ab976.chunk.js.map",
     "index.html": "/index.html",
-    "static/js/2.7701188a.chunk.js.LICENSE.txt": "/static/js/2.7701188a.chunk.js.LICENSE.txt",
+    "static/js/2.d12ab976.chunk.js.LICENSE.txt": "/static/js/2.d12ab976.chunk.js.LICENSE.txt",
     "static/media/github.66378707.svg": "/static/media/github.66378707.svg",
     "static/media/source-sans-pro-v11-latin-regular.74ddb2b0.woff": "/static/media/source-sans-pro-v11-latin-regular.74ddb2b0.woff",
     "static/media/source-sans-pro-v11-latin-regular.96b15882.woff2": "/static/media/source-sans-pro-v11-latin-regular.96b15882.woff2"
   },
   "entrypoints": [
     "static/js/runtime-main.b983407e.js",
-    "static/js/2.7701188a.chunk.js",
+    "static/js/2.d12ab976.chunk.js",
     "static/js/main.08890c25.chunk.js"
   ]
 }
