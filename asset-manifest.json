@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/static/js/main.c1cd0e60.chunk.js",
-    "main.js.map": "/static/js/main.c1cd0e60.chunk.js.map",
+    "main.js": "/static/js/main.b619af48.chunk.js",
+    "main.js.map": "/static/js/main.b619af48.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.004b0004.js",
     "runtime-main.js.map": "/static/js/runtime-main.004b0004.js.map",
-    "static/js/2.3ef79769.chunk.js": "/static/js/2.3ef79769.chunk.js",
-    "static/js/2.3ef79769.chunk.js.map": "/static/js/2.3ef79769.chunk.js.map",
+    "static/js/2.ec40afd1.chunk.js": "/static/js/2.ec40afd1.chunk.js",
+    "static/js/2.ec40afd1.chunk.js.map": "/static/js/2.ec40afd1.chunk.js.map",
     "index.html": "/index.html",
-    "static/js/2.3ef79769.chunk.js.LICENSE.txt": "/static/js/2.3ef79769.chunk.js.LICENSE.txt",
+    "static/js/2.ec40afd1.chunk.js.LICENSE.txt": "/static/js/2.ec40afd1.chunk.js.LICENSE.txt",
     "static/media/github.66378707.svg": "/static/media/github.66378707.svg",
     "static/media/source-sans-pro-v11-latin-regular.74ddb2b0.woff": "/static/media/source-sans-pro-v11-latin-regular.74ddb2b0.woff",
     "static/media/source-sans-pro-v11-latin-regular.96b15882.woff2": "/static/media/source-sans-pro-v11-latin-regular.96b15882.woff2"
   },
   "entrypoints": [
     "static/js/runtime-main.004b0004.js",
-    "static/js/2.3ef79769.chunk.js",
-    "static/js/main.c1cd0e60.chunk.js"
+    "static/js/2.ec40afd1.chunk.js",
+    "static/js/main.b619af48.chunk.js"
   ]
 }
