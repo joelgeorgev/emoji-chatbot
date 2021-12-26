@@ -13,7 +13,7 @@ const renderComposeMessage = (props: Props) =>
   render(<ComposeMessage {...props} />)
 
 const findTextField = (): HTMLInputElement =>
-  screen.getByRole('textbox', { name: 'Write a message' }) as HTMLInputElement
+  screen.getByRole('textbox', { name: 'Write a message' })
 
 const arrange = (): MockHandleSendMessage => {
   const handleSendMessage: MockHandleSendMessage = jest.fn()

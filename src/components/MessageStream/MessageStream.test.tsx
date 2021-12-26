@@ -15,8 +15,7 @@ const createMessages = (texts: string[]): Message[] => texts.map(createMessage)
 const renderMessageStream = (props: Props) =>
   render(<MessageStream {...props} />)
 
-const findMessage = (text: string): HTMLDivElement =>
-  screen.getByText(text) as HTMLDivElement
+const findMessage = (text: string): HTMLDivElement => screen.getByText(text)
 
 const arrange = (messages: string[]): MockScrollToNode => {
   const scrollToNode: MockScrollToNode = jest.fn()
