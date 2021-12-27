@@ -2,6 +2,7 @@ import { renderHook, act } from '@testing-library/react-hooks'
 
 import { useMessages } from './useMessages'
 import { translate } from '../moji-translate'
+import type { BotMessage } from '../types'
 
 jest.mock('../moji-translate')
 
@@ -21,9 +22,9 @@ describe('useMessages', () => {
 
   describe('When a custom welcome message(s) is provided', () => {
     test('returns messages containing the custom welcome message(s)', () => {
-      const welcomeMessages = [
+      const welcomeMessages: BotMessage[] = [
         {
-          author: 'Bot' as const,
+          author: 'Bot',
           text: 'Hello User!'
         }
       ]
