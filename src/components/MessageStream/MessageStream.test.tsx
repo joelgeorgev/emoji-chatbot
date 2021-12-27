@@ -9,8 +9,8 @@ type Message = Props['messages'][number]
 type ScrollToNode = typeof scrollToElement
 type MockScrollToNode = jest.MockedFunction<ScrollToNode>
 
-const createMessage = (text: string): Message => ({ author: 'You', text })
-const createMessages = (texts: string[]): Message[] => texts.map(createMessage)
+const createMessages = (texts: string[]): Message[] =>
+  texts.map((text) => ({ author: 'You', text }))
 
 const renderMessageStream = (props: Props) =>
   render(<MessageStream {...props} />)
