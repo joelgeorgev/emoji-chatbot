@@ -7,7 +7,6 @@ import type { Message } from '../../types'
 
 interface Props {
   messages: Message[]
-  scrollToNode?: typeof scrollToElement
 }
 
 const Wrapper = styled.div`
@@ -21,13 +20,10 @@ const Wrapper = styled.div`
   overflow: auto;
 `
 
-export const MessageStream = ({
-  messages,
-  scrollToNode = scrollToElement
-}: Props) => {
+export const MessageStream = ({ messages }: Props) => {
   useEffect(() => {
     if (messages.length) {
-      scrollToNode('.message', messages.length - 1, { behavior: 'smooth' })
+      scrollToElement('.message', messages.length - 1, { behavior: 'smooth' })
     }
   })
 

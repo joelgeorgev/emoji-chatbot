@@ -2,12 +2,12 @@ import type { ComponentProps } from 'react'
 import { render, screen } from '@testing-library/react'
 
 import { MessageStream } from '.'
-import type { scrollToElement } from '../../utils'
+import { scrollToElement } from '../../utils'
+
+jest.mock('../../utils')
 
 type Props = ComponentProps<typeof MessageStream>
 type Message = Props['messages'][number]
-type ScrollToNode = typeof scrollToElement
-type MockScrollToNode = jest.MockedFunction<ScrollToNode>
 
 const createMessages = (texts: string[]): Message[] =>
   texts.map((text) => ({ author: 'You', text }))
@@ -17,29 +17,22 @@ const renderMessageStream = (props: Props) =>
 
 const findMessage = (text: string): HTMLDivElement => screen.getByText(text)
 
-const arrange = (messages: string[]): MockScrollToNode => {
-  const scrollToNode: MockScrollToNode = jest.fn()
-  renderMessageStream({ messages: createMessages(messages), scrollToNode })
-
-  return scrollToNode
-}
-
 describe('MessageStream', () => {
   describe('Given an array of messages', () => {
     const [firstText, secondText] = ['Hello', 'World']
 
     test('renders the messages', () => {
-      arrange([firstText, secondText])
+      renderMessageStream({ messages: createMessages([firstText, secondText]) })
 
       expect(findMessage(firstText)).toBeDefined()
       expect(findMessage(secondText)).toBeDefined()
     })
 
     test('invokes the scroll function on the last message', () => {
-      const scrollToNode = arrange([firstText, secondText])
+      renderMessageStream({ messages: createMessages([firstText, secondText]) })
 
-      expect(scrollToNode).toHaveBeenCalledTimes(1)
-      expect(scrollToNode).toHaveBeenCalledWith('.message', 1, {
+      expect(scrollToElement).toHaveBeenCalledTimes(1)
+      expect(scrollToElement).toHaveBeenCalledWith('.message', 1, {
         behavior: 'smooth'
       })
     })
@@ -47,9 +40,9 @@ describe('MessageStream', () => {
 
   describe('Given an empty array of messages', () => {
     test('does NOT invoke the scroll function', () => {
-      const scrollToNode = arrange([])
+      renderMessageStream({ messages: [] })
 
-      expect(scrollToNode).toHaveBeenCalledTimes(0)
+      expect(scrollToElement).toHaveBeenCalledTimes(0)
     })
   })
 })
