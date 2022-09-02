@@ -6,6 +6,10 @@ import { scrollToElement } from '../../utils'
 
 jest.mock('../../utils')
 
+const mockScrollToElement = scrollToElement as jest.MockedFunction<
+  typeof scrollToElement
+>
+
 type Props = ComponentProps<typeof MessageStream>
 type Message = Props['messages'][number]
 
@@ -31,8 +35,8 @@ describe('MessageStream', () => {
     test('invokes the scroll function on the last message', () => {
       renderMessageStream({ messages: createMessages([firstText, secondText]) })
 
-      expect(scrollToElement).toHaveBeenCalledTimes(1)
-      expect(scrollToElement).toHaveBeenCalledWith('.message', 1, {
+      expect(mockScrollToElement).toHaveBeenCalledTimes(1)
+      expect(mockScrollToElement).toHaveBeenCalledWith('.message', 1, {
         behavior: 'smooth'
       })
     })
@@ -42,7 +46,7 @@ describe('MessageStream', () => {
     test('does NOT invoke the scroll function', () => {
       renderMessageStream({ messages: [] })
 
-      expect(scrollToElement).toHaveBeenCalledTimes(0)
+      expect(mockScrollToElement).toHaveBeenCalledTimes(0)
     })
   })
 })
