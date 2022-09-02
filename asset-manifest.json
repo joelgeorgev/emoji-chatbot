@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/static/js/main.3b448e62.js",
+    "main.js": "/static/js/main.7cc0fdd0.js",
     "static/media/source-sans-pro-v11-latin-regular.woff": "/static/media/source-sans-pro-v11-latin-regular.74ddb2b07a7f05bded6d.woff",
     "static/media/source-sans-pro-v11-latin-regular.woff2": "/static/media/source-sans-pro-v11-latin-regular.96b158827eaacc5f7912.woff2",
     "static/media/github.svg": "/static/media/github.6637870789067db1d24b378d4c212276.svg",
     "index.html": "/index.html",
-    "main.3b448e62.js.map": "/static/js/main.3b448e62.js.map"
+    "main.7cc0fdd0.js.map": "/static/js/main.7cc0fdd0.js.map"
   },
   "entrypoints": [
-    "static/js/main.3b448e62.js"
+    "static/js/main.7cc0fdd0.js"
   ]
 }
