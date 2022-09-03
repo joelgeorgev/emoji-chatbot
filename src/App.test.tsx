@@ -2,9 +2,7 @@ import { render, screen } from '@testing-library/react'
 
 import { App } from './App'
 
-jest.mock('./components', () => ({
-  ChatWindow: () => <div></div>
-}))
+jest.mock('./components')
 
 const renderApp = () => render(<App />)
 
