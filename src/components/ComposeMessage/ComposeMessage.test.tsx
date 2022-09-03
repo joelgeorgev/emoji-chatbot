@@ -1,5 +1,6 @@
 import type { ComponentProps } from 'react'
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 
 import { ComposeMessage } from '.'
 
@@ -22,11 +23,19 @@ const arrange = (): MockHandleSendMessage => {
   return handleSendMessage
 }
 
-const sendMessage = (message: string): void => {
+const sendMessage = async (message: string) => {
+  const user = userEvent.setup()
   const textField = findTextField()
 
-  fireEvent.change(textField, { target: { value: message } })
-  fireEvent.submit(textField)
+  await user.type(textField, message)
+
+  return user.keyboard('{enter}')
+}
+
+const sendEmptyMessage = () => {
+  const user = userEvent.setup()
+
+  return user.keyboard('{enter}')
 }
 
 describe('ComposeMessage', () => {
@@ -40,29 +49,29 @@ describe('ComposeMessage', () => {
   })
 
   describe('When the user sends a message', () => {
-    test('invokes the callback function', () => {
+    test('invokes the callback function', async () => {
       const handleSendMessage = arrange()
 
-      sendMessage(userMessage)
+      await sendMessage(userMessage)
 
       expect(handleSendMessage).toHaveBeenCalledTimes(1)
       expect(handleSendMessage).toHaveBeenCalledWith(userMessage)
     })
 
-    test('clears the input element', () => {
+    test('clears the input element', async () => {
       arrange()
 
-      sendMessage(userMessage)
+      await sendMessage(userMessage)
 
       expect(findTextField().value).toEqual('')
     })
   })
 
   describe('When the user sends a message with extra spaces', () => {
-    test('invokes the callback function with the trimmed message', () => {
+    test('invokes the callback function with the trimmed message', async () => {
       const handleSendMessage = arrange()
 
-      sendMessage(`     ${userMessage}     `)
+      await sendMessage(`     ${userMessage}     `)
 
       expect(handleSendMessage).toHaveBeenCalledTimes(1)
       expect(handleSendMessage).toHaveBeenCalledWith(userMessage)
@@ -70,10 +79,10 @@ describe('ComposeMessage', () => {
   })
 
   describe('When the user sends an empty message', () => {
-    test('does NOT invoke the callback function', () => {
+    test('does NOT invoke the callback function', async () => {
       const handleSendMessage = arrange()
 
-      sendMessage('')
+      await sendEmptyMessage()
 
       expect(handleSendMessage).toHaveBeenCalledTimes(0)
     })
