@@ -32,12 +32,6 @@ const sendMessage = async (message: string) => {
   return user.keyboard('{enter}')
 }
 
-const sendEmptyMessage = () => {
-  const user = userEvent.setup()
-
-  return user.keyboard('{enter}')
-}
-
 describe('ComposeMessage', () => {
   test('renders a text field', () => {
     arrange()
@@ -82,7 +76,7 @@ describe('ComposeMessage', () => {
     test('does NOT invoke the callback function', async () => {
       const handleSendMessage = arrange()
 
-      await sendEmptyMessage()
+      await sendMessage(' ')
 
       expect(handleSendMessage).toHaveBeenCalledTimes(0)
     })
