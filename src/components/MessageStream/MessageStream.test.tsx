@@ -36,9 +36,13 @@ describe('MessageStream', () => {
       renderMessageStream({ messages: createMessages([firstText, secondText]) })
 
       expect(mockScrollToElement).toHaveBeenCalledTimes(1)
-      expect(mockScrollToElement).toHaveBeenCalledWith('.message', 1, {
-        behavior: 'smooth'
-      })
+      expect(mockScrollToElement).toHaveBeenCalledWith(
+        '[data-scroll-target]',
+        1,
+        {
+          behavior: 'smooth'
+        }
+      )
     })
   })
 

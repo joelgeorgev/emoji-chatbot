@@ -23,7 +23,9 @@ const Wrapper = styled.div`
 export const MessageStream = ({ messages }: Props) => {
   useEffect(() => {
     if (messages.length) {
-      scrollToElement('.message', messages.length - 1, { behavior: 'smooth' })
+      scrollToElement('[data-scroll-target]', messages.length - 1, {
+        behavior: 'smooth'
+      })
     }
   })
 

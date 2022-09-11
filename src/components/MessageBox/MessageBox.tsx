@@ -36,7 +36,7 @@ export const MessageBox = ({ message }: Props) => {
 
   return (
     <Wrapper isBot={isBot}>
-      <StyledMessage isBot={isBot} className='message'>
+      <StyledMessage isBot={isBot} data-scroll-target>
         {text}
       </StyledMessage>
     </Wrapper>

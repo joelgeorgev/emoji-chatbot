@@ -18,6 +18,8 @@ describe('MessageBox', () => {
     const text = 'Hello'
     renderMessageBox(text)
 
-    expect(findMessage(text)).toBeDefined()
+    const message = findMessage(text)
+    expect(message).toBeDefined()
+    expect(message.dataset.scrollTarget).toEqual('true')
   })
 })
