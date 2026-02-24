@@ -1,9 +1,11 @@
+import { MockedFunction, Mock } from 'vitest'
+
 import { scrollToElement } from './scrollToElement'
 import { getDocument } from './getDocument'
 
-jest.mock('./getDocument')
+vi.mock('./getDocument')
 
-const mockGetDocument = getDocument as jest.Mock
+const mockGetDocument = getDocument as Mock
 
 interface MockNode {
   scrollIntoView: () => void
@@ -12,13 +14,13 @@ interface MockNode {
 type QuerySelectorAll = () => MockNode[]
 
 const createMockNode = (overrides?: Partial<MockNode>): MockNode => ({
-  scrollIntoView: jest.fn(),
+  scrollIntoView: vi.fn(),
   ...overrides
 })
 
 const createMockQuerySelectorAll = (
   nodes: MockNode[] = []
-): jest.MockedFunction<QuerySelectorAll> => jest.fn().mockReturnValue(nodes)
+): MockedFunction<QuerySelectorAll> => vi.fn().mockReturnValue(nodes)
 
 const selector = 'selector'
 

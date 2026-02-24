@@ -1,12 +1,13 @@
+import { MockedFunction } from 'vitest'
 import { renderHook, act } from '@testing-library/react'
 
 import { useMessages } from './useMessages'
 import { translate } from '../moji-translate'
 import type { BotMessage } from '../types'
 
-jest.mock('../moji-translate')
+vi.mock('../moji-translate')
 
-const mockTranslate = translate as jest.MockedFunction<typeof translate>
+const mockTranslate = translate as MockedFunction<typeof translate>
 
 describe('useMessages', () => {
   test('returns messages containing a welcome message', () => {

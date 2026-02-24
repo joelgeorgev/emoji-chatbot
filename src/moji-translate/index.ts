@@ -1,4 +1,5 @@
-const emojilib = require('emojilib');
+import emojilib from 'emojilib';
+
 const SYMBOLS = '!"#$%&\'()*+,-./:;<=>?@[]^_`{|}~';
 const allEmoji = emojilib.lib;
 

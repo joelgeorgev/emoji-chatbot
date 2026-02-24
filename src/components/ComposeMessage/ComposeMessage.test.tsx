@@ -1,3 +1,4 @@
+import { MockedFunction } from 'vitest'
 import type { ComponentProps } from 'react'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
@@ -6,7 +7,7 @@ import { ComposeMessage } from '.'
 
 type Props = ComponentProps<typeof ComposeMessage>
 type HandleSendMessage = Props['handleSendMessage']
-type MockHandleSendMessage = jest.MockedFunction<HandleSendMessage>
+type MockHandleSendMessage = MockedFunction<HandleSendMessage>
 
 const userMessage = 'Hello'
 
@@ -17,7 +18,7 @@ const findTextField = (): HTMLInputElement =>
   screen.getByRole('textbox', { name: 'Write a message' })
 
 const arrange = (): MockHandleSendMessage => {
-  const handleSendMessage: MockHandleSendMessage = jest.fn()
+  const handleSendMessage: MockHandleSendMessage = vi.fn()
   renderComposeMessage({ handleSendMessage })
 
   return handleSendMessage
