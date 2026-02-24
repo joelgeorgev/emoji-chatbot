@@ -58,7 +58,7 @@ Error generating stack: `+o.message+`
   overflow: auto;
 `,aL=Sa.footer`
   margin: 2rem;
-`,tL=()=>De.jsxs(ZA,{children:[De.jsx(JA,{children:De.jsx("h1",{children:"Emoji Chatbot"})}),De.jsx(eL,{children:De.jsx("article",{children:De.jsx(FA,{})})}),De.jsx(aL,{children:De.jsx("a",{href:"https://github.com/joelgeorgev/emoji-chatbot",children:De.jsx("img",{src:XA,alt:"Go to GitHub repository page"})})})]}),rL="/emoji-chatbot/assets/source-sans-pro-v11-latin-regular-DcFX28P_.woff2",nL=Ip`
+`,tL=()=>De.jsxs(ZA,{children:[De.jsx(JA,{children:De.jsx("h1",{children:"Emoji Chatbot"})}),De.jsx(eL,{children:De.jsx("article",{children:De.jsx(FA,{})})}),De.jsx(aL,{children:De.jsx("a",{href:"https://github.com/joelgeorgev/emoji-chatbot",children:De.jsx("img",{src:XA,alt:"Go to GitHub repository page"})})})]}),rL="/assets/source-sans-pro-v11-latin-regular-DcFX28P_.woff2",nL=Ip`
   html {
     box-sizing: border-box;
   }
