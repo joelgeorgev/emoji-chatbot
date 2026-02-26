@@ -1,9 +1,9 @@
 import { MockedFunction, Mock } from 'vitest'
 
-import { scrollToElement } from './scrollToElement'
-import { getDocument } from './getDocument'
+import { scrollToElement } from './scrollToElement.ts'
+import { getDocument } from './getDocument.ts'
 
-vi.mock('./getDocument')
+vi.mock('./getDocument.ts')
 
 const mockGetDocument = getDocument as Mock
 

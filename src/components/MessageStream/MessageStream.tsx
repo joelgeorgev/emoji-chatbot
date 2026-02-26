@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import styled from 'styled-components'
 
-import { MessageBox } from '..'
-import { scrollToElement } from '../../utils'
+import { MessageBox } from '../MessageBox/MessageBox.tsx'
+import { scrollToElement } from '../../utils/scrollToElement.ts'
 import type { Message } from '../../types'
 
 interface Props {

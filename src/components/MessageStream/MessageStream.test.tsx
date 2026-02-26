@@ -2,10 +2,10 @@ import { MockedFunction } from 'vitest'
 import type { ComponentProps } from 'react'
 import { render, screen } from '@testing-library/react'
 
-import { MessageStream } from '.'
-import { scrollToElement } from '../../utils'
+import { MessageStream } from './MessageStream.tsx'
+import { scrollToElement } from '../../utils/scrollToElement.ts'
 
-vi.mock('../../utils')
+vi.mock('../../utils/scrollToElement.ts')
 
 const mockScrollToElement = scrollToElement as MockedFunction<
   typeof scrollToElement

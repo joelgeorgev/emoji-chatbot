@@ -3,7 +3,7 @@ import type { ComponentProps } from 'react'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
-import { ComposeMessage } from '.'
+import { ComposeMessage } from './ComposeMessage.tsx'
 
 type Props = ComponentProps<typeof ComposeMessage>
 type HandleSendMessage = Props['handleSendMessage']

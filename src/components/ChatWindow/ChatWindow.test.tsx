@@ -1,13 +1,15 @@
 import { MockedFunction } from 'vitest'
 import { render } from '@testing-library/react'
 
-import { ChatWindow } from '.'
-import { MessageStream, ComposeMessage } from '..'
-import { useMessages } from '../../hooks'
+import { ChatWindow } from './ChatWindow.tsx'
+import { MessageStream } from '../MessageStream/MessageStream.tsx'
+import { ComposeMessage } from '../ComposeMessage/ComposeMessage.tsx'
+import { useMessages } from '../../hooks/useMessages.ts'
 import type { BotMessage } from '../../types'
 
-vi.mock('..')
-vi.mock('../../hooks')
+vi.mock('../MessageStream/MessageStream.tsx')
+vi.mock('../ComposeMessage/ComposeMessage.tsx')
+vi.mock('../../hooks/useMessages.ts')
 
 const mockMessageStream = MessageStream as MockedFunction<typeof MessageStream>
 const mockComposeMessage = ComposeMessage as MockedFunction<

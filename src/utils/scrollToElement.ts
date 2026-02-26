@@ -1,4 +1,4 @@
-import { getDocument } from './getDocument'
+import { getDocument } from './getDocument.ts'
 
 export const scrollToElement = (
   selector: string,

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { ChatWindow } from './components'
+import { ChatWindow } from './components/ChatWindow/ChatWindow.tsx'
 
 import github from './assets/github.svg'
 

@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
-import { MessageStream, ComposeMessage } from '..'
-import { useMessages } from '../../hooks'
+import { MessageStream } from '../MessageStream/MessageStream.tsx'
+import { ComposeMessage } from '../ComposeMessage/ComposeMessage.tsx'
+import { useMessages } from '../../hooks/useMessages.ts'
 
 const Wrapper = styled.div`
   display: flex;

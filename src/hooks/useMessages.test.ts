@@ -1,11 +1,11 @@
 import { MockedFunction } from 'vitest'
 import { renderHook, act } from '@testing-library/react'
 
-import { useMessages } from './useMessages'
-import { translate } from '../moji-translate'
+import { useMessages } from './useMessages.ts'
+import { translate } from '../moji-translate/index.ts'
 import type { BotMessage } from '../types'
 
-vi.mock('../moji-translate')
+vi.mock('../moji-translate/index.ts')
 
 const mockTranslate = translate as MockedFunction<typeof translate>
 

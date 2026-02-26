@@ -1,7 +1,7 @@
 import type { ComponentProps } from 'react'
 import { render, screen } from '@testing-library/react'
 
-import { MessageBox } from '.'
+import { MessageBox } from './MessageBox.tsx'
 
 type Props = ComponentProps<typeof MessageBox>
 type Message = Props['message']
