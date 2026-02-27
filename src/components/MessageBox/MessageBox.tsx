@@ -1,44 +1,23 @@
-import styled from 'styled-components'
-
 import type { Message } from '../../types'
+
+import './MessageBox.css'
 
 interface Props {
   message: Message
 }
-
-interface StyleProps {
-  isBot: boolean
-}
-
-const Wrapper = styled.div<StyleProps>`
-  display: flex;
-  justify-content: flex-end;
-  ${({ isBot }) => isBot && `justify-content: flex-start;`}
-`
-
-const StyledMessage = styled.div<StyleProps>`
-  margin: 0.25rem;
-  border-radius: 0.25rem;
-  padding: 0.5rem;
-  color: #fff;
-  background-color: #555;
-  ${({ isBot }) =>
-    isBot &&
-    `
-      color: #000;
-      background-color: #eee;
-    `}
-`
 
 export const MessageBox = ({ message }: Props) => {
   const { author, text } = message
   const isBot = author === 'Bot'
 
   return (
-    <Wrapper isBot={isBot}>
-      <StyledMessage isBot={isBot} data-scroll-target>
+    <div className={`message-box ${isBot && 'message-box--is-bot'}`}>
+      <div
+        className={`message ${isBot && 'message--is-bot'}`}
+        data-scroll-target
+      >
         {text}
-      </StyledMessage>
-    </Wrapper>
+      </div>
+    </div>
   )
 }

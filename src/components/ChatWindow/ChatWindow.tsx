@@ -1,23 +1,16 @@
-import styled from 'styled-components'
-
 import { MessageStream } from '../MessageStream/MessageStream.tsx'
 import { ComposeMessage } from '../ComposeMessage/ComposeMessage.tsx'
 import { useMessages } from '../../hooks/useMessages.ts'
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 16rem;
-`
+import './ChatWindow.css'
 
 export const ChatWindow = () => {
   const { messages, sendMessage } = useMessages()
 
   return (
-    <Wrapper>
+    <div className='chat-window'>
       <MessageStream messages={messages} />
       <ComposeMessage handleSendMessage={sendMessage} />
-    </Wrapper>
+    </div>
   )
 }

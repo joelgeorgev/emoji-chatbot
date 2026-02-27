@@ -1,0 +1,8 @@
+.compose-message {
+  margin-top: 2rem;
+
+  & .input {
+    border: 1px solid #aaa;
+    padding: 0.5rem;
+  }
+}

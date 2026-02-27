@@ -1,0 +1,10 @@
+.message-stream {
+  display: flex;
+  flex-direction: column;
+  min-height: 20rem;
+  height: 20rem;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  overflow: auto;
+}

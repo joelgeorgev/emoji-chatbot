@@ -1,24 +1,14 @@
 import { useEffect } from 'react'
-import styled from 'styled-components'
 
 import { MessageBox } from '../MessageBox/MessageBox.tsx'
 import { scrollToElement } from '../../utils/scrollToElement.ts'
 import type { Message } from '../../types'
 
+import './MessageStream.css'
+
 interface Props {
   messages: Message[]
 }
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height: 20rem;
-  height: 20rem;
-  border: 1px solid;
-  border-radius: 0.25rem;
-  padding: 1rem;
-  overflow: auto;
-`
 
 export const MessageStream = ({ messages }: Props) => {
   useEffect(() => {
@@ -30,10 +20,10 @@ export const MessageStream = ({ messages }: Props) => {
   })
 
   return (
-    <Wrapper>
+    <div className='message-stream'>
       {messages.map((message, index) => (
         <MessageBox key={index} message={message} />
       ))}
-    </Wrapper>
+    </div>
   )
 }

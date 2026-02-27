@@ -1,0 +1,21 @@
+.message-box {
+  display: flex;
+  justify-content: flex-end;
+
+  & .message {
+    margin: 0.25rem;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    color: #fff;
+    background-color: #555;
+  }
+
+  & .message--is-bot {
+    color: #000;
+    background-color: #eee;
+  }
+}
+
+.message-box--is-bot {
+  justify-content: flex-start;
+}
