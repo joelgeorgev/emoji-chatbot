@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const ComposeMessage = ({ handleSendMessage }: Props) => {
-  const [message, setMessage] = useState<string>('')
+  const [message, setMessage] = useState('')
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault()
