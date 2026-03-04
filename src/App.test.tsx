@@ -10,7 +10,9 @@ describe('App', () => {
   test('renders a heading', () => {
     renderApp()
 
-    expect(screen.getByRole('heading', { name: 'Emoji Chatbot' })).toBeDefined()
+    expect(
+      screen.getByRole('heading', { name: 'Emoji Chatbot' })
+    ).toBeInTheDocument()
   })
 
   test('renders a link to the repository', () => {
@@ -20,7 +22,7 @@ describe('App', () => {
       name: 'Go to GitHub repository page'
     })
 
-    expect(link).toBeDefined()
+    expect(link).toBeInTheDocument()
     expect(link.href).toEqual('https://github.com/joelgeorgev/emoji-chatbot')
   })
 })

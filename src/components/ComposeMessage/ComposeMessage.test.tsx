@@ -39,7 +39,7 @@ describe('ComposeMessage', () => {
 
     const textField = findTextField()
 
-    expect(textField).toBeDefined()
+    expect(textField).toBeInTheDocument()
     expect(textField.placeholder).toEqual('Write a message')
   })
 
@@ -58,7 +58,7 @@ describe('ComposeMessage', () => {
 
       await sendMessage(userMessage)
 
-      expect(findTextField().value).toEqual('')
+      expect(findTextField()).toHaveValue('')
     })
   })
 

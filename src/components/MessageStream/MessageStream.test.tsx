@@ -29,8 +29,8 @@ describe('MessageStream', () => {
     test('renders the messages', () => {
       renderMessageStream({ messages: createMessages([firstText, secondText]) })
 
-      expect(findMessage(firstText)).toBeDefined()
-      expect(findMessage(secondText)).toBeDefined()
+      expect(findMessage(firstText)).toBeInTheDocument()
+      expect(findMessage(secondText)).toBeInTheDocument()
     })
 
     test('invokes the scroll function on the last message', () => {
